@@ -1,0 +1,98 @@
+# AegisAI
+
+> AegisAI is a standards-based AI governance assessment platform. It registers an
+> organisation's AI systems, runs a guided control assessment, and produces a
+> board-ready report with a defensible launch verdict: Insufficient Evidence, Go,
+> Conditional, or No-Go.
+
+AegisAI measures three things separately, and never lets one hide another:
+
+- **Exposure** — how easily the system goes wrong: the data it touches, how
+  independently it acts, whether outsiders can reach it, and which advanced
+  capabilities it has. Scored 0.5–10. The scale is floored: prompt injection,
+  insecure output handling, supply chain and overreliance apply to every LLM
+  system, so no system can score zero risk.
+- **Control posture** — every applicable control is scored 0–5 for maturity, and
+  the gaps are normalised into a single index (0–10) that is comparable across
+  systems. Compliance, partial implementation and assessment progress are reported
+  as three separate figures; a half-built control is never counted as a finished one.
+- **Consequence** — how bad a failure would be, classified by rule from five
+  checkable declarations: people affected, safety of life, regulated decision
+  process, reversibility, and financial exposure. Not declared is reported as
+  unknown, never as low.
+
+The management briefing plots exposure against consequence and carries the gap index
+in each cell, so a CISO can see which system the security budget should go to first —
+including the systems a single risk score hides: unlikely to fail, expensive when
+they do, and barely protected.
+
+## Verdicts
+
+Four verdicts, from fixed rules:
+
+- **Insufficient Evidence** — a mandatory control nobody has assessed yet, or a
+  questionnaire below 30% complete. The launch is blocked, but the reason is missing
+  evidence, not a deficiency that was found. Audit practice has always separated an
+  adverse opinion from a disclaimer of opinion; AegisAI says which one it means.
+- **Go** — no blocking issues identified.
+- **Conditional** — three or more observed high-severity findings.
+- **No-Go** — a mandatory control was assessed and it failed. One is enough.
+
+## Knowledge bases
+
+AegisAI assessments draw on sixteen standards and frameworks: NIST AI Risk Management
+Framework 1.0 (all 72 subcategories; 47 hand-matched to AegisAI controls, 25 explicitly
+not assessed — a coverage view, never scored), NIST AI 600-1 (Generative AI Profile), OWASP AI Security Verification
+Standard 1.0 (191 requirements, 186 of them hand-matched to AegisAI controls), OWASP Top 10
+for LLM Applications 2025, OWASP Top 10 for Agentic Applications 2026, OWASP AI Maturity
+Assessment v1.0, AIDEFEND 2026.07.24 (357 techniques — 92 top-level plus 265 sub-techniques —
+carrying 8,371 upstream cross-framework mappings), the AegisAI AIGOV control library (56
+controls), an EU AI Act reference layer (Regulation (EU) 2024/1689 — reference view, not
+legal advice), and the CSA AI Controls Matrix v1.1.0 (all 18 domains; domain level, not the
+247 control objectives).
+
+## Where the mapping count comes from
+
+The `framework_mappings` table holds 8,631 rows across eleven framework families, and the
+rows are not all of the same kind:
+
+- **8,371 rows are technique-level**, inherited verbatim from the AIDEFEND upstream snapshot
+  across nine families. Nobody at AegisAI verified them against an individual control.
+- **260 rows are control-level**, matched by hand against a specific AIGOV control: 187 for
+  OWASP AISVS 1.0 and 73 for NIST AI RMF 1.0.
+
+Seven further frameworks reach AegisAI only through AIDEFEND's upstream snapshot — MITRE
+ATLAS (1,652), Cisco Integrated AI Security (1,429), Databricks AI Security Framework 3.0
+(1,259), MAESTRO (976), NIST Adversarial Machine Learning 2025 (698), Google SAIF 2.0 Risks
+(700), and OWASP ML Top 10 2023 (445) — 7,159 of the 8,371 upstream mappings. AegisAI did
+not create those mappings and has not verified them at control level; reports show them
+greyed out and labelled "upstream, not hand-checked". They are never cited as AegisAI's own
+mappings.
+
+## What AegisAI does not claim
+
+- Gap-scoring weights carry a documented source and rationale and can be tuned with
+  an audit trail. A backtest module can validate them against an organisation's own
+  logged incidents. **The shipped defaults are expert judgment, not empirically
+  calibrated** — and the reports say so on their face.
+- Consequence declarations come from the customer and are not verified, so they feed
+  **no score, no finding, and no verdict** — presentation and prioritisation only.
+- AIMA maturity figures are **derived initial estimates**, not formal AIMA
+  self-assessments.
+- The EU AI Act layer is a **reference view, not legal advice**.
+- AegisAI reports against standards; it does not certify compliance with them.
+
+## Pages
+
+- [Home](index.html): what AegisAI is, standards it is built on
+- [How it works](how-it-works.html): three steps, knowledge bases, EU AI Act timeline
+- [Methodology](methodology.html): the three measured inputs, weighting, the four
+  decision rules, and the exposure × consequence prioritisation matrix
+- [Reports](reports.html): report gallery and six worked examples from the built-in demo
+- Sample assessment report pages (demo data, EN/zh-TW): sample-report-en.html, sample-report-zh.html
+- Sample management briefing pages (demo data, EN/zh-TW): sample-briefing-en.html, sample-briefing-zh.html
+- [Partnerships](partnerships.html): partner paths and FAQ
+
+## Contact
+
+- LinkedIn: https://www.linkedin.com/in/yen-ming-kevin-chiu/

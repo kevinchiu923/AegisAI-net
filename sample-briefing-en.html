@@ -1,0 +1,3488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex">
+<title>Sample management briefing — AegisAI</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<meta name="description" content="A sample AegisAI management briefing: risk portfolio matrix, per-system verdicts and a remediation plan. Demo data only — no client information.">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AegisAI">
+<meta property="og:title" content="Sample management briefing — AegisAI">
+<meta property="og:description" content="A sample AegisAI management briefing: risk portfolio matrix, per-system verdicts and a remediation plan. Demo data only — no client information.">
+<meta property="og:url" content="https://kevinchiu923.github.io/AegisAI-net/sample-briefing-en.html">
+<meta property="og:image" content="https://kevinchiu923.github.io/AegisAI-net/assets/aegisai-lockup-1200x630-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="AegisAI — You make the call. We make it defensible.">
+<meta property="og:image:type" content="image/png">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_TW">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sample management briefing — AegisAI">
+<meta name="twitter:description" content="A sample AegisAI management briefing: risk portfolio matrix, per-system verdicts and a remediation plan. Demo data only — no client information.">
+<meta name="twitter:image" content="https://kevinchiu923.github.io/AegisAI-net/assets/aegisai-lockup-1200x630-en.png">
+<meta name="twitter:image:alt" content="AegisAI — You make the call. We make it defensible.">
+<link rel="stylesheet" href="assets/report-tailwind.css?v=20260717">
+<link rel="stylesheet" href="assets/report-rwd.css?v=20260717">
+<script defer src="assets/alpine.min.js?v=20260717"></script>
+<style>[x-cloak]{display:none!important}</style>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen">
+<header style="background:#0A1D37;color:#fff;padding:14px 60px 14px 24px;display:flex;flex-wrap:wrap;align-items:center;gap:12px;position:sticky;top:0;z-index:5">
+  <img src="assets/brand-mark.svg" alt="" width="26" height="26" style="display:block">
+  <span style="font:800 19px Inter,system-ui,sans-serif">Aegis<span style="color:#C9A227">AI</span></span>
+  <span style="font-size:12.5px;color:#B9C3D4">Sample management briefing · demo data — no client information</span>
+</header>
+<main class="flex-1 w-full px-6 py-8">
+    
+<div class="mb-6">
+  <h1 class="text-2xl font-bold text-slate-800">Management Briefing</h1>
+  <p class="text-slate-500 mt-1">Select systems to generate an executive briefing</p>
+</div>
+
+
+<div class="bg-white border border-gray-100 rounded-lg shadow-sm p-5 mb-6">
+  <form onsubmit="return false" data-demo="1">
+    <input type="hidden" name="lang" value="en">
+    <div class="flex items-center justify-between mb-3">
+      <h2 class="text-sm font-semibold text-slate-700">Select Systems</h2>
+      <div class="flex gap-3 text-xs">
+        <button type="button" onclick="selectAll()" class="text-slate-500 hover:text-slate-700 transition">Select All</button>
+        <button type="button" onclick="deselectAll()" class="text-slate-500 hover:text-slate-700 transition">Deselect All</button>
+      </div>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2 mb-4">
+      
+      <label class="flex items-center gap-2 p-2 rounded-lg border border-gray-100 hover:bg-gray-50 cursor-pointer transition">
+        <input type="checkbox" name="sys" value="eeb294ad-371e-43e5-8f99-a279103c3fc6"
+               
+               class="rounded border-gray-300 text-slate-700 system-check">
+        <div class="min-w-0">
+          <div class="text-sm font-medium text-slate-700 truncate">Customer Service LLM App</div>
+          <div class="flex items-center gap-1 mt-0.5">
+            <span class="text-[11px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-500">LLM</span>
+            
+            <span class="text-[11px] px-1.5 py-0.5 rounded bg-orange-50 text-orange-600">High</span>
+            
+          </div>
+        </div>
+      </label>
+      
+      <label class="flex items-center gap-2 p-2 rounded-lg border border-gray-100 hover:bg-gray-50 cursor-pointer transition">
+        <input type="checkbox" name="sys" value="b8c9d0e1-f2a3-4c4d-8e5f-607182930415"
+               checked
+               class="rounded border-gray-300 text-slate-700 system-check">
+        <div class="min-w-0">
+          <div class="text-sm font-medium text-slate-700 truncate">Engineering DevDocs Assistant</div>
+          <div class="flex items-center gap-1 mt-0.5">
+            <span class="text-[11px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-500">RAG</span>
+            
+            <span class="text-[11px] px-1.5 py-0.5 rounded bg-yellow-50 text-yellow-600">Low</span>
+            
+          </div>
+        </div>
+      </label>
+      
+      <label class="flex items-center gap-2 p-2 rounded-lg border border-gray-100 hover:bg-gray-50 cursor-pointer transition">
+        <input type="checkbox" name="sys" value="a7b8c9d0-e1f2-4b3c-9d4e-5f6071829304"
+               
+               class="rounded border-gray-300 text-slate-700 system-check">
+        <div class="min-w-0">
+          <div class="text-sm font-medium text-slate-700 truncate">Finance Close &amp; Expense Audit Copilot</div>
+          <div class="flex items-center gap-1 mt-0.5">
+            <span class="text-[11px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-500">LLM</span>
+            
+            <span class="text-[11px] px-1.5 py-0.5 rounded bg-orange-50 text-orange-600">High</span>
+            
+          </div>
+        </div>
+      </label>
+      
+      <label class="flex items-center gap-2 p-2 rounded-lg border border-gray-100 hover:bg-gray-50 cursor-pointer transition">
+        <input type="checkbox" name="sys" value="81b329b5-fe4b-4b90-a16a-f9eea844b626"
+               
+               class="rounded border-gray-300 text-slate-700 system-check">
+        <div class="min-w-0">
+          <div class="text-sm font-medium text-slate-700 truncate">HR Policy RAG Chatbot</div>
+          <div class="flex items-center gap-1 mt-0.5">
+            <span class="text-[11px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-500">RAG</span>
+            
+            <span class="text-[11px] px-1.5 py-0.5 rounded bg-yellow-50 text-yellow-600">Medium</span>
+            
+          </div>
+        </div>
+      </label>
+      
+      <label class="flex items-center gap-2 p-2 rounded-lg border border-gray-100 hover:bg-gray-50 cursor-pointer transition">
+        <input type="checkbox" name="sys" value="c2f3d71e-9c94-4d4d-9799-25ae7112ee40"
+               
+               class="rounded border-gray-300 text-slate-700 system-check">
+        <div class="min-w-0">
+          <div class="text-sm font-medium text-slate-700 truncate">IT Ops AI Agent</div>
+          <div class="flex items-center gap-1 mt-0.5">
+            <span class="text-[11px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-500">Agent</span>
+            
+            <span class="text-[11px] px-1.5 py-0.5 rounded bg-red-50 text-red-600">Critical</span>
+            
+          </div>
+        </div>
+      </label>
+      
+      <label class="flex items-center gap-2 p-2 rounded-lg border border-gray-100 hover:bg-gray-50 cursor-pointer transition">
+        <input type="checkbox" name="sys" value="d4e5f6a7-b8c9-4d0e-1f2a-3b4c5d6e7f80"
+               
+               class="rounded border-gray-300 text-slate-700 system-check">
+        <div class="min-w-0">
+          <div class="text-sm font-medium text-slate-700 truncate">Legal Contract Review AI</div>
+          <div class="flex items-center gap-1 mt-0.5">
+            <span class="text-[11px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-500">RAG</span>
+            
+            <span class="text-[11px] px-1.5 py-0.5 rounded bg-yellow-50 text-yellow-600">Medium</span>
+            
+          </div>
+        </div>
+      </label>
+      
+      <label class="flex items-center gap-2 p-2 rounded-lg border border-gray-100 hover:bg-gray-50 cursor-pointer transition">
+        <input type="checkbox" name="sys" value="c9d0e1f2-a3b4-4d5e-9f60-718293041526"
+               
+               class="rounded border-gray-300 text-slate-700 system-check">
+        <div class="min-w-0">
+          <div class="text-sm font-medium text-slate-700 truncate">Marketing CampaignPilot Agent</div>
+          <div class="flex items-center gap-1 mt-0.5">
+            <span class="text-[11px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-500">Agent</span>
+            
+            <span class="text-[11px] px-1.5 py-0.5 rounded bg-red-50 text-red-600">Critical</span>
+            
+          </div>
+        </div>
+      </label>
+      
+      <label class="flex items-center gap-2 p-2 rounded-lg border border-gray-100 hover:bg-gray-50 cursor-pointer transition">
+        <input type="checkbox" name="sys" value="f6a7b8c9-d0e1-4a2b-8c3d-4e5f60718293"
+               
+               class="rounded border-gray-300 text-slate-700 system-check">
+        <div class="min-w-0">
+          <div class="text-sm font-medium text-slate-700 truncate">Patient Intake Triage Chatbot</div>
+          <div class="flex items-center gap-1 mt-0.5">
+            <span class="text-[11px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-500">RAG</span>
+            
+            <span class="text-[11px] px-1.5 py-0.5 rounded bg-red-50 text-red-600">Critical</span>
+            
+          </div>
+        </div>
+      </label>
+      
+      <label class="flex items-center gap-2 p-2 rounded-lg border border-gray-100 hover:bg-gray-50 cursor-pointer transition">
+        <input type="checkbox" name="sys" value="e5f6a7b8-c9d0-4e1f-2a3b-4c5d6e7f8091"
+               
+               class="rounded border-gray-300 text-slate-700 system-check">
+        <div class="min-w-0">
+          <div class="text-sm font-medium text-slate-700 truncate">Sales Intelligence Copilot</div>
+          <div class="flex items-center gap-1 mt-0.5">
+            <span class="text-[11px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-500">LLM</span>
+            
+            <span class="text-[11px] px-1.5 py-0.5 rounded bg-yellow-50 text-yellow-600">Medium</span>
+            
+          </div>
+        </div>
+      </label>
+      
+    </div>
+    <button type="submit" onclick="buildSystemIds()"
+      class="bg-slate-800 hover:bg-slate-700 text-white text-sm font-medium px-6 py-2 rounded-lg transition">
+      Generate Briefing
+    </button>
+  </form>
+</div>
+
+
+
+
+<div class="mb-6">
+  <h2 class="text-base font-semibold text-slate-700 mb-3">Executive Summary</h2>
+  <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+    <div class="bg-white border border-gray-100 rounded-lg shadow-sm p-4 text-center">
+      <div class="text-2xl font-bold text-slate-800">1</div>
+      <div class="text-xs text-slate-500 mt-1">Systems Assessed</div>
+    </div>
+    <div class="bg-white border border-gray-100 rounded-lg shadow-sm p-4 text-center">
+      <div class="text-2xl font-bold text-green-600">
+        0
+      </div>
+      <div class="text-xs text-slate-500 mt-1">Critical Findings</div>
+    </div>
+    <div class="bg-white border border-gray-100 rounded-lg shadow-sm p-4 text-center">
+      <div class="text-2xl font-bold text-slate-800">0.50</div>
+      <div class="text-xs text-slate-500 mt-1">Avg Maturity / 5</div>
+    </div>
+    <div class="bg-white border border-gray-100 rounded-lg shadow-sm p-4 text-center">
+      
+      <div class="text-2xl font-bold text-red-600">
+        1
+      </div>
+      <div class="text-xs text-slate-500 mt-1">Blocked (No-Go + Insufficient Evidence)</div>
+      <div class="text-[10px] text-slate-400 mt-1">
+        🔴 0 · ⚪ 1
+      </div>
+    </div>
+  </div>
+  <div class="mt-3 rounded-lg px-4 py-3 text-sm font-medium
+    bg-slate-100 border border-slate-200 text-slate-700
+    ">
+    HOLD — Some systems cannot be judged until their assessment is complete
+  </div>
+</div>
+
+
+<div class="flex gap-3 mb-6">
+  <a href="#" data-demo="1" target="_blank"
+     class="text-sm bg-slate-800 hover:bg-slate-700 text-white px-4 py-2 rounded-lg transition font-medium" aria-disabled="true">
+    ↓ PDF 中文
+  </a>
+  <a href="#" data-demo="1" target="_blank"
+     class="text-sm bg-slate-700 hover:bg-slate-600 text-white px-4 py-2 rounded-lg transition font-medium" aria-disabled="true">
+    ↓ PDF English
+  </a>
+</div>
+
+
+
+<div class="bg-white border border-gray-100 rounded-lg shadow-sm overflow-hidden mb-6">
+  <div class="bg-gray-50 border-b border-gray-100 px-4 py-3">
+    <h3 class="text-sm font-semibold text-slate-700">Risk Portfolio — exposure × consequence</h3>
+    <p class="text-xs text-slate-400 mt-0.5">Where should the security budget go first? Gap index shown per system.</p>
+  </div>
+  <div class="p-4">
+    <div class="grid grid-cols-[auto_1fr_1fr] gap-2 items-stretch">
+      
+      <div class="flex items-center justify-end pr-2 text-xs font-medium text-slate-500 whitespace-nowrap">
+        Consequence HIGH
+      </div>
+      
+      
+      <div class="border rounded-lg p-3 bg-amber-50 border-amber-200">
+        <div class="flex items-baseline justify-between">
+          <span class="text-xs font-semibold text-slate-700">Invest / harden</span>
+          <span class="text-xs text-slate-500">0</span>
+        </div>
+        <p class="text-[10px] text-slate-500 mt-0.5 leading-snug">Low exposure but severe consequence — a small failure here is still expensive. Protect the blast radius.</p>
+        <ul class="mt-2 space-y-1">
+          
+          <li class="text-[11px] text-slate-400">—</li>
+          
+        </ul>
+        
+      </div>
+      
+      
+      <div class="border rounded-lg p-3 bg-red-50 border-red-200">
+        <div class="flex items-baseline justify-between">
+          <span class="text-xs font-semibold text-slate-700">Act now</span>
+          <span class="text-xs text-slate-500">0</span>
+        </div>
+        <p class="text-[10px] text-slate-500 mt-0.5 leading-snug">High exposure and high consequence — fix these first.</p>
+        <ul class="mt-2 space-y-1">
+          
+          <li class="text-[11px] text-slate-400">—</li>
+          
+        </ul>
+        
+      </div>
+      
+
+      
+      <div class="flex items-center justify-end pr-2 text-xs font-medium text-slate-500 whitespace-nowrap">
+        Consequence LOW
+      </div>
+      
+      
+      <div class="border rounded-lg p-3 bg-green-50 border-green-200">
+        <div class="flex items-baseline justify-between">
+          <span class="text-xs font-semibold text-slate-700">Routine monitoring</span>
+          <span class="text-xs text-slate-500">1</span>
+        </div>
+        <p class="text-[10px] text-slate-500 mt-0.5 leading-snug">Low exposure, low consequence.</p>
+        <ul class="mt-2 space-y-1">
+          
+          <li class="text-[11px] text-slate-700 flex items-center justify-between gap-2">
+            <span class="truncate">Engineering DevDocs Assistant</span>
+            <span class="shrink-0 text-[10px] text-slate-400">Gap Index 9.0</span>
+          </li>
+          
+        </ul>
+        
+        <div class="text-[10px] text-slate-400 mt-2">⌀ Gap Index 9.0/10</div>
+        
+      </div>
+      
+      
+      <div class="border rounded-lg p-3 bg-orange-50 border-orange-200">
+        <div class="flex items-baseline justify-between">
+          <span class="text-xs font-semibold text-slate-700">Technical debt</span>
+          <span class="text-xs text-slate-500">0</span>
+        </div>
+        <p class="text-[10px] text-slate-500 mt-0.5 leading-snug">High exposure, limited consequence — real gaps, bounded damage. Schedule, don&#39;t panic.</p>
+        <ul class="mt-2 space-y-1">
+          
+          <li class="text-[11px] text-slate-400">—</li>
+          
+        </ul>
+        
+      </div>
+      
+
+      
+      <div></div>
+      <div class="text-center text-xs font-medium text-slate-500 pt-1">Exposure LOW</div>
+      <div class="text-center text-xs font-medium text-slate-500 pt-1">Exposure HIGH</div>
+    </div>
+
+    
+    
+    
+
+    <p class="text-[10px] text-slate-400 mt-3 leading-relaxed">
+      Consequence is classified from five checkable declarations and feeds no score, finding, or verdict.
+    </p>
+  </div>
+</div>
+
+
+<div class="bg-white border border-gray-100 rounded-lg shadow-sm overflow-hidden mb-6">
+  <div class="bg-gray-50 border-b border-gray-100 px-4 py-3">
+    <h3 class="text-sm font-semibold text-slate-700">Go / No-Go by System</h3>
+  </div>
+  <div class="rwd-scroll" data-rwd="table"><table class="w-full text-sm">
+    <thead class="text-slate-500 border-b border-gray-100">
+      <tr>
+        <th class="text-left font-medium px-4 py-2">System</th>
+        <th class="text-left font-medium px-4 py-2">Type</th>
+        <th class="text-left font-medium px-4 py-2">Risk</th>
+        <th class="text-left font-medium px-4 py-2">Consequence</th>
+        <th class="text-right font-medium px-4 py-2">Compliance Rate</th>
+        <th class="text-right font-medium px-4 py-2">Assessed</th>
+        <th class="text-right font-medium px-4 py-2">Avg Maturity</th>
+        <th class="text-center font-medium px-4 py-2">Decision</th>
+        <th class="text-left font-medium px-4 py-2">Reason</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-100">
+      
+      <tr class="hover:bg-gray-50">
+        <td class="px-4 py-3 font-medium text-slate-700">Engineering DevDocs Assistant</td>
+        <td class="px-4 py-3">
+          <span class="text-xs px-2 py-0.5 rounded-full bg-slate-100 text-slate-600">RAG</span>
+        </td>
+        <td class="px-4 py-3">
+          
+          <span class="text-xs rounded-full px-2 py-0.5 bg-yellow-50 text-yellow-700">Low</span>
+          
+        </td>
+        <td class="px-4 py-3">
+          
+          
+          <span class="text-xs rounded-full px-2 py-0.5 font-medium
+            bg-yellow-50 text-yellow-700
+            ">
+            Medium*
+          </span>
+          <span class="text-[10px] text-slate-400 ml-1">1/5</span>
+          
+        </td>
+        <td class="px-4 py-3 text-right text-slate-600">12%</td>
+        <td class="px-4 py-3 text-right text-slate-600">19%</td>
+        <td class="px-4 py-3 text-right text-slate-600">0.5/5</td>
+        <td class="px-4 py-3 text-center">
+          
+          
+          <span class="text-xs font-semibold rounded-full px-3 py-1 bg-slate-100 text-slate-600">⚪ Insufficient Evidence</span>
+          
+        </td>
+        <td class="px-4 py-3 text-xs text-slate-500 max-w-xs">Questionnaire only 19% complete — insufficient evidence to form a verdict; complete the assessment first</td>
+      </tr>
+      
+    </tbody>
+  </table></div>
+</div>
+
+
+
+<div class="bg-white border border-gray-100 rounded-lg shadow-sm overflow-hidden mb-6">
+  <div class="bg-gray-50 border-b border-gray-100 px-4 py-3">
+    <h3 class="text-sm font-semibold text-slate-700">Top 10 Findings</h3>
+    <p class="text-[11px] text-slate-400 mt-1 leading-relaxed flex items-start gap-1">
+      <span class="shrink-0">ⓘ</span><span>Shows only assessed controls that have a recorded finding, ranked by gap score (top 10). Not-yet-assessed controls are excluded even when their gap score is identical — so the count of a given score here may be lower than in a system&#39;s full Gap Assessment Report.</span>
+    </p>
+  </div>
+  <div class="rwd-scroll" data-rwd="table"><table class="w-full text-sm">
+    <thead class="text-slate-500 border-b border-gray-100">
+      <tr>
+        <th class="text-center font-medium px-3 py-2 w-10">#</th>
+        <th class="text-left font-medium px-3 py-2">Control</th>
+        <th class="text-left font-medium px-3 py-2">System</th>
+        <th class="text-right font-medium px-3 py-2">Gap Index</th>
+        <th class="text-center font-medium px-3 py-2">Severity</th>
+        <th class="text-left font-medium px-3 py-2">Recommendation</th>
+        <th class="text-left font-medium px-3 py-2">Standards</th>
+      </tr>
+    </thead>
+    <tbody class="divide-y divide-gray-100" x-data="{ open: {} }">
+      
+      
+      <tr class="hover:bg-gray-50">
+        <td class="px-3 py-2 text-center text-xs font-bold text-slate-400">1</td>
+        <td class="px-3 py-2">
+          <div class="text-xs font-medium text-slate-700">AIGOV-01-001</div>
+          <div class="text-xs text-slate-400">AI Governance Policy and Framework</div>
+        </td>
+        <td class="px-3 py-2 text-xs text-slate-600">Engineering DevDocs Assistant</td>
+        <td class="px-3 py-2 text-right text-xs font-mono font-bold
+          text-orange-600">
+          4.5
+        </td>
+        <td class="px-3 py-2 text-center">
+          
+          <span class="text-xs rounded-full px-2 py-0.5 bg-orange-50 text-orange-700">High</span>
+          
+        </td>
+        <td class="px-3 py-2 text-xs text-slate-500 max-w-xs truncate" title="Draft and obtain CISO/Board approval for a formal AI governance policy defining risk appetite, acceptable use, and oversight roles. Schedule annual reviews and maintain version history with approval records.">
+          Draft and obtain CISO/Board approval for a formal AI governance policy defining risk appetite, acceptable use, and oversight roles. Schedule annual reviews and maintain version history with approval records.
+        </td>
+        <td class="px-3 py-2 whitespace-nowrap">
+          
+          <button type="button" @click="open[1] = !open[1]"
+            class="inline-flex items-center gap-1 text-[11px] px-2 py-1 rounded-md border border-slate-200 text-slate-600 hover:bg-slate-50 transition">
+            <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+            <span class="font-mono" title="Number of external framework items this control maps to (excludes the AICM domain and the AIDEFEND technique themselves).">7</span><span class="text-[9px] text-green-600" title="Of those, how many were matched by hand against this control.">✓7</span>
+            <span x-text="open[1] ? '▲' : '▼'" class="text-[9px] text-slate-400"></span>
+          </button>
+          
+        </td>
+      </tr>
+      
+      <tr x-show="open[1]" x-cloak>
+        <td colspan="7" class="px-4 py-3 bg-slate-50/70 border-t border-slate-100">
+          
+<div class="space-y-4">
+
+  
+  <div>
+    <div class="text-[11px] font-semibold text-slate-500 mb-1.5">What this control is</div>
+
+    
+    <div class="flex flex-wrap items-center gap-x-2 gap-y-1.5 mb-1.5">
+      <span class="text-[11px] text-slate-500 font-medium shrink-0 sm:w-40">CSA AICM domain</span>
+      <span class="text-[11px] px-2 py-0.5 rounded-full bg-teal-50 text-teal-700 border border-teal-100">
+        GRC · Governance, Risk and Compliance
+      </span>
+      <span class="text-[10px] text-slate-400">domain level (18 domains) · v1.1.0</span>
+    </div>
+    
+
+    <div class="flex flex-wrap items-center gap-x-2 gap-y-1.5">
+      <span class="text-[11px] text-slate-500 font-medium shrink-0 sm:w-40">AIDEFEND technique</span>
+      
+      <span class="text-[11px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 border border-slate-200">
+        None
+      </span>
+      
+    </div>
+
+    
+    
+    <div class="mt-1.5 text-[11px] text-slate-500 bg-slate-50 border border-slate-200 rounded-md px-2 py-1.5 leading-relaxed">
+      AI 治理政策是組織的治理文件（風險胃納、角色、監督機制），非技術性防禦手段。AIDEFEND 為防禦技術目錄，無對應項目。
+    </div>
+    
+  </div>
+
+  
+  <div>
+    <div class="text-[11px] font-semibold text-slate-500 mb-1">What this finding maps to</div>
+    <div class="text-[10px] text-slate-400 mb-1.5 leading-relaxed">Cross-framework mappings for this finding. Green = matched by hand against this control. Grey = inherited from the AIDEFEND upstream snapshot — nobody verified it at control level, so do not cite it as our mapping.</div>
+
+    
+    <div class="space-y-1.5">
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">NIST AI RMF 1.0</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — GOVERN 1.1 — Legal and regulatory requirements involving AI are understood, managed, and documented.">
+            GOVERN 1.1
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — GOVERN 1.2 — The characteristics of trustworthy AI are integrated into organizational policies, processes, and procedures.">
+            GOVERN 1.2
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — GOVERN 1.3 — Processes and procedures are in place to determine the needed level of risk management activities based on the organizat">
+            GOVERN 1.3
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — GOVERN 1.4 — The risk management process and its outcomes are established through transparent policies, procedures, and other control">
+            GOVERN 1.4
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — GOVERN 1.5 — Ongoing monitoring and periodic review of the risk management process and its outcomes are planned, organizational roles">
+            GOVERN 1.5
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — GOVERN 2.3 — Executive leadership of the organization takes responsibility for decisions about risks associated with AI system develo">
+            GOVERN 2.3
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — MAP 1.5 — Organizational risk tolerances are determined and documented.">
+            MAP 1.5
+          </span>
+          
+          
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] text-slate-400">
+      <span><span class="inline-block w-2 h-2 rounded-sm bg-green-100 border border-green-300 align-middle"></span>
+        Matched by hand</span>
+      <span><span class="inline-block w-2 h-2 rounded-sm bg-slate-100 border border-slate-300 align-middle"></span>
+        AIDEFEND upstream (not hand-checked)</span>
+    </div>
+    
+  </div>
+
+</div>
+        </td>
+      </tr>
+      
+      
+      
+      <tr class="hover:bg-gray-50">
+        <td class="px-3 py-2 text-center text-xs font-bold text-slate-400">2</td>
+        <td class="px-3 py-2">
+          <div class="text-xs font-medium text-slate-700">AIGOV-04-002</div>
+          <div class="text-xs text-slate-400">System Prompt Security and Confidentiality</div>
+        </td>
+        <td class="px-3 py-2 text-xs text-slate-600">Engineering DevDocs Assistant</td>
+        <td class="px-3 py-2 text-right text-xs font-mono font-bold
+          text-orange-600">
+          4.5
+        </td>
+        <td class="px-3 py-2 text-center">
+          
+          <span class="text-xs rounded-full px-2 py-0.5 bg-orange-50 text-orange-700">High</span>
+          
+        </td>
+        <td class="px-3 py-2 text-xs text-slate-500 max-w-xs truncate" title="Store system prompts in access-controlled secret storage and harden them with explicit instructions not to reveal contents to users. Test system prompt extraction via adversarial queries and maintain version control for all prompt changes with documented approval records.">
+          Store system prompts in access-controlled secret storage and harden them with explicit instructions not to reveal contents to users. Test system prompt extraction via adversarial queries and maintain version control for all prompt changes with documented approval records.
+        </td>
+        <td class="px-3 py-2 whitespace-nowrap">
+          
+          <button type="button" @click="open[2] = !open[2]"
+            class="inline-flex items-center gap-1 text-[11px] px-2 py-1 rounded-md border border-slate-200 text-slate-600 hover:bg-slate-50 transition">
+            <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+            <span class="font-mono" title="Number of external framework items this control maps to (excludes the AICM domain and the AIDEFEND technique themselves).">46</span><span class="text-[9px] text-green-600" title="Of those, how many were matched by hand against this control.">✓2</span>
+            <span x-text="open[2] ? '▲' : '▼'" class="text-[9px] text-slate-400"></span>
+          </button>
+          
+        </td>
+      </tr>
+      
+      <tr x-show="open[2]" x-cloak>
+        <td colspan="7" class="px-4 py-3 bg-slate-50/70 border-t border-slate-100">
+          
+<div class="space-y-4">
+
+  
+  <div>
+    <div class="text-[11px] font-semibold text-slate-500 mb-1.5">What this control is</div>
+
+    
+    <div class="flex flex-wrap items-center gap-x-2 gap-y-1.5 mb-1.5">
+      <span class="text-[11px] text-slate-500 font-medium shrink-0 sm:w-40">CSA AICM domain</span>
+      <span class="text-[11px] px-2 py-0.5 rounded-full bg-teal-50 text-teal-700 border border-teal-100">
+        AIS · Application &amp; Interface Security
+      </span>
+      <span class="text-[10px] text-slate-400">domain level (18 domains) · v1.1.0</span>
+    </div>
+    
+
+    <div class="flex flex-wrap items-center gap-x-2 gap-y-1.5">
+      <span class="text-[11px] text-slate-500 font-medium shrink-0 sm:w-40">AIDEFEND technique</span>
+      
+      <span class="text-[11px] px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-100 font-mono">
+        AID-H-017 · System Prompt Hardening
+      </span>
+      
+    </div>
+
+    
+    
+  </div>
+
+  
+  <div>
+    <div class="text-[11px] font-semibold text-slate-500 mb-1">What this finding maps to</div>
+    <div class="text-[10px] text-slate-400 mb-1.5 leading-relaxed">Cross-framework mappings for this finding. Green = matched by hand against this control. Grey = inherited from the AIDEFEND upstream snapshot — nobody verified it at control level, so do not cite it as our mapping.</div>
+
+    
+    <div class="space-y-1.5">
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">OWASP LLM Top 10 2025</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — LLM01 — 2025 Prompt Injection">
+            LLM01
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — LLM06 — 2025 Excessive Agency">
+            LLM06
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — LLM07 — 2025 System Prompt Leakage">
+            LLM07
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">OWASP AISVS 1.0</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — C2.1.6 — Verify that the system enforces an instruction hierarchy in which system and developer messages override user instructio">
+            C2.1.6
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — C7.3.2 — Verify that output filters detect and block responses that disclose system prompt content or backend data.">
+            C7.3.2
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">OWASP Top 10 for Agentic Applications 2026</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — ASI01 — 2026 Agent Goal Hijack">
+            ASI01
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — ASI02 — 2026 Tool Misuse and Exploitation (hardened prompts prevent tool misuse via injection)">
+            ASI02
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">MITRE ATLAS</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0051 LLM Prompt Injection">
+            AML.T0051 LLM Prompt Injection
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0051.000 LLM Prompt Injection: Direct">
+            AML.T0051.000 LLM Prompt Injection: Direct
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0051.001 LLM Prompt Injection: Indirect">
+            AML.T0051.001 LLM Prompt Injection: Indirect
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0054 LLM Jailbreak">
+            AML.T0054 LLM Jailbreak
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0065 LLM Prompt Crafting">
+            AML.T0065 LLM Prompt Crafting
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0068 LLM Prompt Obfuscation">
+            AML.T0068 LLM Prompt Obfuscation
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0056 Extract LLM System Prompt (hardened system prompts resist extraction attempts)">
+            AML.T0056 Extract LLM System Prompt (hardened system prompts resist extraction attempts)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0069.001 Discover LLM System Information: System Instruction Keywords (instruction hierarchy reduces exploitability of discovered keywords)">
+            AML.T0069.001 Discover LLM System Information: System Instruction Keywords (instruction hierarchy reduces exploitability of discovered keywords)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0069.002 Discover LLM System Information: System Prompt (system prompt hardening resists system prompt discovery)">
+            AML.T0069.002 Discover LLM System Information: System Prompt (system prompt hardening resists system prompt discovery)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0051.002 LLM Prompt Injection: Triggered (system prompt hardening prevents time/event-triggered payload execution)">
+            AML.T0051.002 LLM Prompt Injection: Triggered (system prompt hardening prevents time/event-triggered payload execution)
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">NIST Adversarial Machine Learning 2025</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — NISTAML.018 Prompt Injection">
+            NISTAML.018 Prompt Injection
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — NISTAML.015 Indirect Prompt Injection">
+            NISTAML.015 Indirect Prompt Injection
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — NISTAML.027 Misaligned Outputs (prompt hierarchy ensures aligned outputs)">
+            NISTAML.027 Misaligned Outputs (prompt hierarchy ensures aligned outputs)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — NISTAML.035 Prompt Extraction">
+            NISTAML.035 Prompt Extraction
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">MAESTRO</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Agent Goal Manipulation (L7)">
+            Agent Goal Manipulation (L7)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Agent Tool Misuse (L7)">
+            Agent Tool Misuse (L7)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Input Validation Attacks (L3)">
+            Input Validation Attacks (L3)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Compromised Agents (L7) (hardened system prompts prevent agent compromise via injection)">
+            Compromised Agents (L7) (hardened system prompts prevent agent compromise via injection)
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">Google Secure AI Framework 2.0 - Risks</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — PIJ — Prompt Injection">
+            PIJ
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — SDD — Sensitive Data Disclosure (system prompt hardening prevents system prompt leakage and data disclosure)">
+            SDD
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — IMO — Insecure Model Output (instruction hierarchy constrains model outputs)">
+            IMO
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">Cisco Integrated AI Security and Safety Framework</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AITech-1.1 Direct Prompt Injection">
+            AITech-1.1 Direct Prompt Injection
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AITech-1.2 Indirect Prompt Injection">
+            AITech-1.2 Indirect Prompt Injection
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AITech-2.1 Jailbreak">
+            AITech-2.1 Jailbreak
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AISubtech-2.1.1 Context Manipulation (Jailbreak)">
+            AISubtech-2.1.1 Context Manipulation (Jailbreak)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AISubtech-2.1.2 Obfuscation (Jailbreak)">
+            AISubtech-2.1.2 Obfuscation (Jailbreak)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AISubtech-2.1.3 Semantic Manipulation (Jailbreak)">
+            AISubtech-2.1.3 Semantic Manipulation (Jailbreak)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AISubtech-1.1.1 Instruction Manipulation (Direct Prompt Injection)">
+            AISubtech-1.1.1 Instruction Manipulation (Direct Prompt Injection)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AISubtech-1.2.1 Instruction Manipulation (Indirect Prompt Injection)">
+            AISubtech-1.2.1 Instruction Manipulation (Indirect Prompt Injection)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AITech-8.4 Prompt/Meta Extraction">
+            AITech-8.4 Prompt/Meta Extraction
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AISubtech-8.4.1 System LLM Prompt Leakage">
+            AISubtech-8.4.1 System LLM Prompt Leakage
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AITech-1.3 Goal Manipulation (system prompt hardening prevents goal re-specification via injection)">
+            AITech-1.3 Goal Manipulation (system prompt hardening prevents goal re-specification via injection)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AISubtech-1.3.1 Goal Manipulation (Models, Agents) (hardened instruction hierarchy resists model/agent goal manipulation)">
+            AISubtech-1.3.1 Goal Manipulation (Models, Agents) (hardened instruction hierarchy resists model/agent goal manipulation)
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">Databricks AI Security Framework 3.0</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Model Serving - Inference requests 9.1: Prompt inject">
+            Model Serving - Inference requests 9.1: Prompt inject
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Model Serving - Inference requests 9.12: LLM Jailbreak">
+            Model Serving - Inference requests 9.12: LLM Jailbreak
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Model Serving - Inference requests 9.13: Excessive agency (system prompt hardening constrains agent autonomy)">
+            Model Serving - Inference requests 9.13: Excessive agency (system prompt hardening constrains agent autonomy)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Model Serving - Inference response 10.6: Sensitive data output from a model (system prompt hardening prevents sensitive data leakage)">
+            Model Serving - Inference response 10.6: Sensitive data output from a model (system prompt hardening prevents sensitive data leakage)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Agents - Core 13.6: Intent Breaking &amp; Goal Manipulation (hardened system prompts resist goal manipulation)">
+            Agents - Core 13.6: Intent Breaking &amp; Goal Manipulation (hardened system prompts resist goal manipulation)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Agents - Core 13.2: Tool Misuse">
+            Agents - Core 13.2: Tool Misuse
+          </span>
+          
+          
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] text-slate-400">
+      <span><span class="inline-block w-2 h-2 rounded-sm bg-green-100 border border-green-300 align-middle"></span>
+        Matched by hand</span>
+      <span><span class="inline-block w-2 h-2 rounded-sm bg-slate-100 border border-slate-300 align-middle"></span>
+        AIDEFEND upstream (not hand-checked)</span>
+    </div>
+    
+  </div>
+
+</div>
+        </td>
+      </tr>
+      
+      
+      
+      <tr class="hover:bg-gray-50">
+        <td class="px-3 py-2 text-center text-xs font-bold text-slate-400">3</td>
+        <td class="px-3 py-2">
+          <div class="text-xs font-medium text-slate-700">AIGOV-02-001</div>
+          <div class="text-xs text-slate-400">AI Training and RAG Data Classification</div>
+        </td>
+        <td class="px-3 py-2 text-xs text-slate-600">Engineering DevDocs Assistant</td>
+        <td class="px-3 py-2 text-right text-xs font-mono font-bold
+          text-orange-600">
+          3.9
+        </td>
+        <td class="px-3 py-2 text-center">
+          
+          <span class="text-xs rounded-full px-2 py-0.5 bg-orange-50 text-orange-700">High</span>
+          
+        </td>
+        <td class="px-3 py-2 text-xs text-slate-500 max-w-xs truncate" title="Apply classification labels to all training datasets and RAG source documents, enforcing appropriate handling controls per classification tier. Ensure labels are maintained when documents are updated or re-ingested into the knowledge base.">
+          Apply classification labels to all training datasets and RAG source documents, enforcing appropriate handling controls per classification tier. Ensure labels are maintained when documents are updated or re-ingested into the knowledge base.
+        </td>
+        <td class="px-3 py-2 whitespace-nowrap">
+          
+          <button type="button" @click="open[3] = !open[3]"
+            class="inline-flex items-center gap-1 text-[11px] px-2 py-1 rounded-md border border-slate-200 text-slate-600 hover:bg-slate-50 transition">
+            <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+            <span class="font-mono" title="Number of external framework items this control maps to (excludes the AICM domain and the AIDEFEND technique themselves).">17</span><span class="text-[9px] text-green-600" title="Of those, how many were matched by hand against this control.">✓2</span>
+            <span x-text="open[3] ? '▲' : '▼'" class="text-[9px] text-slate-400"></span>
+          </button>
+          
+        </td>
+      </tr>
+      
+      <tr x-show="open[3]" x-cloak>
+        <td colspan="7" class="px-4 py-3 bg-slate-50/70 border-t border-slate-100">
+          
+<div class="space-y-4">
+
+  
+  <div>
+    <div class="text-[11px] font-semibold text-slate-500 mb-1.5">What this control is</div>
+
+    
+    <div class="flex flex-wrap items-center gap-x-2 gap-y-1.5 mb-1.5">
+      <span class="text-[11px] text-slate-500 font-medium shrink-0 sm:w-40">CSA AICM domain</span>
+      <span class="text-[11px] px-2 py-0.5 rounded-full bg-teal-50 text-teal-700 border border-teal-100">
+        DSP · Data Security and Privacy Lifecycle Management
+      </span>
+      <span class="text-[10px] text-slate-400">domain level (18 domains) · v1.1.0</span>
+    </div>
+    
+
+    <div class="flex flex-wrap items-center gap-x-2 gap-y-1.5">
+      <span class="text-[11px] text-slate-500 font-medium shrink-0 sm:w-40">AIDEFEND technique</span>
+      
+      <span class="text-[11px] px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-100 font-mono">
+        AID-H-030.001 · Data-Use Policy Schema, Tagging &amp; Classification
+      </span>
+      
+    </div>
+
+    
+    
+  </div>
+
+  
+  <div>
+    <div class="text-[11px] font-semibold text-slate-500 mb-1">What this finding maps to</div>
+    <div class="text-[10px] text-slate-400 mb-1.5 leading-relaxed">Cross-framework mappings for this finding. Green = matched by hand against this control. Grey = inherited from the AIDEFEND upstream snapshot — nobody verified it at control level, so do not cite it as our mapping.</div>
+
+    
+    <div class="space-y-1.5">
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">OWASP LLM Top 10 2025</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — LLM04 — 2025 Data and Model Poisoning (missing policy metadata allows unauthorized training reuse)">
+            LLM04
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">OWASP AISVS 1.0</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — C1.1.1 — Verify that training data includes only features, attributes, and fields required for the model&#39;s stated purpose.">
+            C1.1.1
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — C5.2.7 — Verify that data classification labels propagate to downstream resources (embeddings, prompt caches, model outputs).">
+            C5.2.7
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">OWASP Top 10 for Agentic Applications 2026</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — ASI06 — 2026 Memory &amp; Context Poisoning (untagged data enters memory unchecked)">
+            ASI06
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">OWASP ML Top 10 2023</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — ML02 — 2023 Data Poisoning Attack (missing classification and authorization metadata)">
+            ML02
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">MITRE ATLAS</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0020 Poison Training Data (untagged or mis-tagged data bypasses authorization checks)">
+            AML.T0020 Poison Training Data (untagged or mis-tagged data bypasses authorization checks)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0080 AI Agent Context Poisoning (unauthorized data enters memory or context due to missing tags)">
+            AML.T0080 AI Agent Context Poisoning (unauthorized data enters memory or context due to missing tags)
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">NIST Adversarial Machine Learning 2025</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — NISTAML.013 Data Poisoning (classification and authorization gaps enable unauthorized data admission)">
+            NISTAML.013 Data Poisoning (classification and authorization gaps enable unauthorized data admission)
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">MAESTRO</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Data Poisoning (L2) (unclassified data admitted without purpose checks)">
+            Data Poisoning (L2) (unclassified data admitted without purpose checks)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Regulatory Non-Compliance by AI Security Agents (L6) (missing or incorrect purpose and consent metadata)">
+            Regulatory Non-Compliance by AI Security Agents (L6) (missing or incorrect purpose and consent metadata)
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">Google Secure AI Framework 2.0 - Risks</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — UTD — Unauthorized Training Data (data-use tagging identifies data not authorized for training)">
+            UTD
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — EDH — Excessive Data Handling (classification and purpose tagging enforce data handling boundaries)">
+            EDH
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">Cisco Integrated AI Security and Safety Framework</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AISubtech-15.1.25 Privacy Attacks: PII / PHI / PCI (regulated data without purpose or consent tagging)">
+            AISubtech-15.1.25 Privacy Attacks: PII / PHI / PCI (regulated data without purpose or consent tagging)
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">Databricks AI Security Framework 3.0</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Raw Data 1.2: Missing data classification">
+            Raw Data 1.2: Missing data classification
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Raw Data 1.8: Legality of data">
+            Raw Data 1.8: Legality of data
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Raw Data 1.6: Insufficient data lineage">
+            Raw Data 1.6: Insufficient data lineage
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Governance 4.1: Lack of traceability and transparency of model assets">
+            Governance 4.1: Lack of traceability and transparency of model assets
+          </span>
+          
+          
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] text-slate-400">
+      <span><span class="inline-block w-2 h-2 rounded-sm bg-green-100 border border-green-300 align-middle"></span>
+        Matched by hand</span>
+      <span><span class="inline-block w-2 h-2 rounded-sm bg-slate-100 border border-slate-300 align-middle"></span>
+        AIDEFEND upstream (not hand-checked)</span>
+    </div>
+    
+  </div>
+
+</div>
+        </td>
+      </tr>
+      
+      
+      
+      <tr class="hover:bg-gray-50">
+        <td class="px-3 py-2 text-center text-xs font-bold text-slate-400">4</td>
+        <td class="px-3 py-2">
+          <div class="text-xs font-medium text-slate-700">AIGOV-01-002</div>
+          <div class="text-xs text-slate-400">AI System Inventory and Registration</div>
+        </td>
+        <td class="px-3 py-2 text-xs text-slate-600">Engineering DevDocs Assistant</td>
+        <td class="px-3 py-2 text-right text-xs font-mono font-bold
+          text-slate-600">
+          3.0
+        </td>
+        <td class="px-3 py-2 text-center">
+          
+          <span class="text-xs rounded-full px-2 py-0.5 bg-yellow-50 text-yellow-700">Medium</span>
+          
+        </td>
+        <td class="px-3 py-2 text-xs text-slate-500 max-w-xs truncate" title="Create a centralized AI system inventory register covering all deployed and in-development systems, each with assigned business, technical, and security owners. Establish a shadow AI discovery process to identify and register unregistered deployments quarterly.">
+          Create a centralized AI system inventory register covering all deployed and in-development systems, each with assigned business, technical, and security owners. Establish a shadow AI discovery process to identify and register unregistered deployments quarterly.
+        </td>
+        <td class="px-3 py-2 whitespace-nowrap">
+          
+          <button type="button" @click="open[4] = !open[4]"
+            class="inline-flex items-center gap-1 text-[11px] px-2 py-1 rounded-md border border-slate-200 text-slate-600 hover:bg-slate-50 transition">
+            <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+            <span class="font-mono" title="Number of external framework items this control maps to (excludes the AICM domain and the AIDEFEND technique themselves).">33</span><span class="text-[9px] text-green-600" title="Of those, how many were matched by hand against this control.">✓5</span>
+            <span x-text="open[4] ? '▲' : '▼'" class="text-[9px] text-slate-400"></span>
+          </button>
+          
+        </td>
+      </tr>
+      
+      <tr x-show="open[4]" x-cloak>
+        <td colspan="7" class="px-4 py-3 bg-slate-50/70 border-t border-slate-100">
+          
+<div class="space-y-4">
+
+  
+  <div>
+    <div class="text-[11px] font-semibold text-slate-500 mb-1.5">What this control is</div>
+
+    
+    <div class="flex flex-wrap items-center gap-x-2 gap-y-1.5 mb-1.5">
+      <span class="text-[11px] text-slate-500 font-medium shrink-0 sm:w-40">CSA AICM domain</span>
+      <span class="text-[11px] px-2 py-0.5 rounded-full bg-teal-50 text-teal-700 border border-teal-100">
+        GRC · Governance, Risk and Compliance
+      </span>
+      <span class="text-[10px] text-slate-400">domain level (18 domains) · v1.1.0</span>
+    </div>
+    
+
+    <div class="flex flex-wrap items-center gap-x-2 gap-y-1.5">
+      <span class="text-[11px] text-slate-500 font-medium shrink-0 sm:w-40">AIDEFEND technique</span>
+      
+      <span class="text-[11px] px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-100 font-mono">
+        AID-M-001 · AI Asset Inventory &amp; Mapping
+      </span>
+      
+    </div>
+
+    
+    
+  </div>
+
+  
+  <div>
+    <div class="text-[11px] font-semibold text-slate-500 mb-1">What this finding maps to</div>
+    <div class="text-[10px] text-slate-400 mb-1.5 leading-relaxed">Cross-framework mappings for this finding. Green = matched by hand against this control. Grey = inherited from the AIDEFEND upstream snapshot — nobody verified it at control level, so do not cite it as our mapping.</div>
+
+    
+    <div class="space-y-1.5">
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">OWASP LLM Top 10 2025</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — LLM03 — 2025 Supply Chain">
+            LLM03
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">NIST AI RMF 1.0</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — GOVERN 1.6 — Mechanisms are in place to inventory AI systems and are resourced according to organizational risk priorities.">
+            GOVERN 1.6
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — GOVERN 2.1 — Roles and responsibilities and lines of communication related to mapping, measuring, and managing AI risks are documente">
+            GOVERN 2.1
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — MAP 1.1 — Intended purpose, potentially beneficial uses, context-specific laws, norms and expectations, and prospective settings i">
+            MAP 1.1
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — MAP 2.1 — The specific task, and methods used to implement the task, that the AI system will support is defined (e.g., classifiers">
+            MAP 2.1
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — MAP 3.3 — Targeted application scope is specified and documented based on the system’s capability, established context, and AI sys">
+            MAP 3.3
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">OWASP Top 10 for Agentic Applications 2026</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — ASI04 — 2026 Agentic Supply Chain Vulnerabilities">
+            ASI04
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">OWASP ML Top 10 2023</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — ML06 — 2023 AI Supply Chain Attacks">
+            ML06
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">MITRE ATLAS</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0007 Discover AI Artifacts">
+            AML.T0007 Discover AI Artifacts
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0035 AI Artifact Collection">
+            AML.T0035 AI Artifact Collection
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0010 AI Supply Chain Compromise">
+            AML.T0010 AI Supply Chain Compromise
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">NIST Adversarial Machine Learning 2025</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — NISTAML.051 Model Poisoning (Supply Chain)">
+            NISTAML.051 Model Poisoning (Supply Chain)
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">MAESTRO</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Supply Chain Attacks (Cross-Layer)">
+            Supply Chain Attacks (Cross-Layer)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Supply Chain Attacks (L3)">
+            Supply Chain Attacks (L3)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Compromised Framework Components (L3)">
+            Compromised Framework Components (L3)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Compromised Container Images (L4)">
+            Compromised Container Images (L4)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Compromised Agent Registry (L7)">
+            Compromised Agent Registry (L7)
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">Google Secure AI Framework 2.0 - Risks</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — MST — Model Source Tampering (inventory enables detection of tampered components)">
+            MST
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — MXF — Model Exfiltration (cannot protect models you don&#39;t know exist)">
+            MXF
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — MDT — Model Deployment Tampering (mapping deployment components reveals unauthorized changes)">
+            MDT
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — IIC — Insecure Integrated Component (cataloging APIs/plugins identifies insecure integrations)">
+            IIC
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">Cisco Integrated AI Security and Safety Framework</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AISubtech-4.1.1 Rogue Agent Introduction">
+            AISubtech-4.1.1 Rogue Agent Introduction
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AITech-9.3 Dependency / Plugin Compromise">
+            AITech-9.3 Dependency / Plugin Compromise
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AISubtech-9.3.2 Dependency Name Squatting (Tools / Servers)">
+            AISubtech-9.3.2 Dependency Name Squatting (Tools / Servers)
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">Databricks AI Security Framework 3.0</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Governance 4.1: Lack of traceability and transparency of model assets">
+            Governance 4.1: Lack of traceability and transparency of model assets
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Governance 4.2: Lack of end-to-end ML lifecycle">
+            Governance 4.2: Lack of end-to-end ML lifecycle
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Model 7.3: ML Supply chain vulnerabilities">
+            Model 7.3: ML Supply chain vulnerabilities
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Model 7.2: Model assets leak">
+            Model 7.2: Model assets leak
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Algorithms 5.4: Malicious libraries">
+            Algorithms 5.4: Malicious libraries
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Operations 11.1: Lack of MLOps - repeatable enforced standards">
+            Operations 11.1: Lack of MLOps - repeatable enforced standards
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Model Management 8.1: Model attribution">
+            Model Management 8.1: Model attribution
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Agents - Core 13.13: Rogue Agents in Multi-Agent Systems">
+            Agents - Core 13.13: Rogue Agents in Multi-Agent Systems
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Agents - Tools MCP Server 13.21: Supply Chain Attacks">
+            Agents - Tools MCP Server 13.21: Supply Chain Attacks
+          </span>
+          
+          
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] text-slate-400">
+      <span><span class="inline-block w-2 h-2 rounded-sm bg-green-100 border border-green-300 align-middle"></span>
+        Matched by hand</span>
+      <span><span class="inline-block w-2 h-2 rounded-sm bg-slate-100 border border-slate-300 align-middle"></span>
+        AIDEFEND upstream (not hand-checked)</span>
+    </div>
+    
+  </div>
+
+</div>
+        </td>
+      </tr>
+      
+      
+      
+      <tr class="hover:bg-gray-50">
+        <td class="px-3 py-2 text-center text-xs font-bold text-slate-400">5</td>
+        <td class="px-3 py-2">
+          <div class="text-xs font-medium text-slate-700">AIGOV-01-003</div>
+          <div class="text-xs text-slate-400">AI Risk Classification and Criticality Scoring</div>
+        </td>
+        <td class="px-3 py-2 text-xs text-slate-600">Engineering DevDocs Assistant</td>
+        <td class="px-3 py-2 text-right text-xs font-mono font-bold
+          text-slate-600">
+          3.0
+        </td>
+        <td class="px-3 py-2 text-center">
+          
+          <span class="text-xs rounded-full px-2 py-0.5 bg-yellow-50 text-yellow-700">Medium</span>
+          
+        </td>
+        <td class="px-3 py-2 text-xs text-slate-500 max-w-xs truncate" title="Document and apply a risk scoring methodology to all AI systems, factoring in data sensitivity, autonomy level, external exposure, and business impact. Ensure high-risk and critical systems are mapped to enhanced control requirements and re-scored on significant changes.">
+          Document and apply a risk scoring methodology to all AI systems, factoring in data sensitivity, autonomy level, external exposure, and business impact. Ensure high-risk and critical systems are mapped to enhanced control requirements and re-scored on significant changes.
+        </td>
+        <td class="px-3 py-2 whitespace-nowrap">
+          
+          <button type="button" @click="open[5] = !open[5]"
+            class="inline-flex items-center gap-1 text-[11px] px-2 py-1 rounded-md border border-slate-200 text-slate-600 hover:bg-slate-50 transition">
+            <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+            <span class="font-mono" title="Number of external framework items this control maps to (excludes the AICM domain and the AIDEFEND technique themselves).">6</span><span class="text-[9px] text-green-600" title="Of those, how many were matched by hand against this control.">✓6</span>
+            <span x-text="open[5] ? '▲' : '▼'" class="text-[9px] text-slate-400"></span>
+          </button>
+          
+        </td>
+      </tr>
+      
+      <tr x-show="open[5]" x-cloak>
+        <td colspan="7" class="px-4 py-3 bg-slate-50/70 border-t border-slate-100">
+          
+<div class="space-y-4">
+
+  
+  <div>
+    <div class="text-[11px] font-semibold text-slate-500 mb-1.5">What this control is</div>
+
+    
+    <div class="flex flex-wrap items-center gap-x-2 gap-y-1.5 mb-1.5">
+      <span class="text-[11px] text-slate-500 font-medium shrink-0 sm:w-40">CSA AICM domain</span>
+      <span class="text-[11px] px-2 py-0.5 rounded-full bg-teal-50 text-teal-700 border border-teal-100">
+        GRC · Governance, Risk and Compliance
+      </span>
+      <span class="text-[10px] text-slate-400">domain level (18 domains) · v1.1.0</span>
+    </div>
+    
+
+    <div class="flex flex-wrap items-center gap-x-2 gap-y-1.5">
+      <span class="text-[11px] text-slate-500 font-medium shrink-0 sm:w-40">AIDEFEND technique</span>
+      
+      <span class="text-[11px] px-2 py-0.5 rounded-full bg-slate-100 text-slate-600 border border-slate-200">
+        None
+      </span>
+      
+    </div>
+
+    
+    
+    <div class="mt-1.5 text-[11px] text-slate-500 bg-slate-50 border border-slate-200 rounded-md px-2 py-1.5 leading-relaxed">
+      AI 風險分級是風險方法論，不是防禦手段。AIDEFEND 不收方法論。
+    </div>
+    
+  </div>
+
+  
+  <div>
+    <div class="text-[11px] font-semibold text-slate-500 mb-1">What this finding maps to</div>
+    <div class="text-[10px] text-slate-400 mb-1.5 leading-relaxed">Cross-framework mappings for this finding. Green = matched by hand against this control. Grey = inherited from the AIDEFEND upstream snapshot — nobody verified it at control level, so do not cite it as our mapping.</div>
+
+    
+    <div class="space-y-1.5">
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">NIST AI RMF 1.0</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — GOVERN 1.3 — Processes and procedures are in place to determine the needed level of risk management activities based on the organizat">
+            GOVERN 1.3
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — GOVERN 4.2 — Organizational teams document the risks and potential impacts of the AI technology they design, develop, deploy, evaluat">
+            GOVERN 4.2
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — MAP 5.1 — Likelihood and magnitude of each identified impact (both potentially beneficial and harmful) based on expected use, past">
+            MAP 5.1
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — MEASURE 3.1 — Approaches, personnel, and documentation are in place to regularly identify and track existing, unanticipated, and emerg">
+            MEASURE 3.1
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — MANAGE 1.2 — Treatment of documented AI risks is prioritized based on impact, likelihood, or available resources or methods.">
+            MANAGE 1.2
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — MANAGE 1.3 — Responses to the AI risks deemed high priority as identified by the Map function, are developed, planned, and documented">
+            MANAGE 1.3
+          </span>
+          
+          
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] text-slate-400">
+      <span><span class="inline-block w-2 h-2 rounded-sm bg-green-100 border border-green-300 align-middle"></span>
+        Matched by hand</span>
+      <span><span class="inline-block w-2 h-2 rounded-sm bg-slate-100 border border-slate-300 align-middle"></span>
+        AIDEFEND upstream (not hand-checked)</span>
+    </div>
+    
+  </div>
+
+</div>
+        </td>
+      </tr>
+      
+      
+      
+      <tr class="hover:bg-gray-50">
+        <td class="px-3 py-2 text-center text-xs font-bold text-slate-400">6</td>
+        <td class="px-3 py-2">
+          <div class="text-xs font-medium text-slate-700">AIGOV-07-001</div>
+          <div class="text-xs text-slate-400">AI Application API Authentication and Authorization</div>
+        </td>
+        <td class="px-3 py-2 text-xs text-slate-600">Engineering DevDocs Assistant</td>
+        <td class="px-3 py-2 text-right text-xs font-mono font-bold
+          text-slate-600">
+          2.6
+        </td>
+        <td class="px-3 py-2 text-center">
+          
+          <span class="text-xs rounded-full px-2 py-0.5 bg-yellow-50 text-yellow-700">Medium</span>
+          
+        </td>
+        <td class="px-3 py-2 text-xs text-slate-500 max-w-xs truncate" title="Enforce OAuth 2.0 or API key authentication with defined rotation schedules on all AI application API endpoints. Implement authorization checks to restrict users to permitted AI features and include API authentication in security assessments.">
+          Enforce OAuth 2.0 or API key authentication with defined rotation schedules on all AI application API endpoints. Implement authorization checks to restrict users to permitted AI features and include API authentication in security assessments.
+        </td>
+        <td class="px-3 py-2 whitespace-nowrap">
+          
+          <button type="button" @click="open[6] = !open[6]"
+            class="inline-flex items-center gap-1 text-[11px] px-2 py-1 rounded-md border border-slate-200 text-slate-600 hover:bg-slate-50 transition">
+            <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+            <span class="font-mono" title="Number of external framework items this control maps to (excludes the AICM domain and the AIDEFEND technique themselves).">30</span><span class="text-[9px] text-green-600" title="Of those, how many were matched by hand against this control.">✓4</span>
+            <span x-text="open[6] ? '▲' : '▼'" class="text-[9px] text-slate-400"></span>
+          </button>
+          
+        </td>
+      </tr>
+      
+      <tr x-show="open[6]" x-cloak>
+        <td colspan="7" class="px-4 py-3 bg-slate-50/70 border-t border-slate-100">
+          
+<div class="space-y-4">
+
+  
+  <div>
+    <div class="text-[11px] font-semibold text-slate-500 mb-1.5">What this control is</div>
+
+    
+    <div class="flex flex-wrap items-center gap-x-2 gap-y-1.5 mb-1.5">
+      <span class="text-[11px] text-slate-500 font-medium shrink-0 sm:w-40">CSA AICM domain</span>
+      <span class="text-[11px] px-2 py-0.5 rounded-full bg-teal-50 text-teal-700 border border-teal-100">
+        IAM · Identity &amp; Access Management
+      </span>
+      <span class="text-[10px] text-slate-400">domain level (18 domains) · v1.1.0</span>
+    </div>
+    
+
+    <div class="flex flex-wrap items-center gap-x-2 gap-y-1.5">
+      <span class="text-[11px] text-slate-500 font-medium shrink-0 sm:w-40">AIDEFEND technique</span>
+      
+      <span class="text-[11px] px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-100 font-mono">
+        AID-H-004.002 · Service &amp; API Authentication
+      </span>
+      
+    </div>
+
+    
+    
+  </div>
+
+  
+  <div>
+    <div class="text-[11px] font-semibold text-slate-500 mb-1">What this finding maps to</div>
+    <div class="text-[10px] text-slate-400 mb-1.5 leading-relaxed">Cross-framework mappings for this finding. Green = matched by hand against this control. Grey = inherited from the AIDEFEND upstream snapshot — nobody verified it at control level, so do not cite it as our mapping.</div>
+
+    
+    <div class="space-y-1.5">
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">OWASP LLM Top 10 2025</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — LLM02 — 2025 Sensitive Information Disclosure">
+            LLM02
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">OWASP AISVS 1.0</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — C10.2.1 — Verify that MCP servers validate access tokens for each request and do not rely on transport security alone.">
+            C10.2.1
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — C10.2.2 — Verify that MCP servers validate the presented access token&#39;s issuer, audience, expiration, and scope claims in accordan">
+            C10.2.2
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — C10.3.3 — Verify that MCP servers validate both the Origin header and the Host header independently on all HTTP-based transports t">
+            C10.3.3
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — C5.2.1 — Verify that every AI resource (datasets, endpoints, vector collections, embedding indices, compute instances) enforces a">
+            C5.2.1
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">OWASP Top 10 for Agentic Applications 2026</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — ASI03 — 2026 Identity and Privilege Abuse (service auth enforces identity verification)">
+            ASI03
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — ASI07 — 2026 Insecure Inter-Agent Communication (mTLS secures inter-service communication)">
+            ASI07
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">OWASP ML Top 10 2023</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — ML05 — 2023 Model Theft">
+            ML05
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">MITRE ATLAS</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0040 AI Model Inference API Access">
+            AML.T0040 AI Model Inference API Access
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0024 Exfiltration via AI Inference API">
+            AML.T0024 Exfiltration via AI Inference API
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0024.002 Exfiltration via AI Inference API: Extract AI Model (API auth prevents systematic extraction queries)">
+            AML.T0024.002 Exfiltration via AI Inference API: Extract AI Model (API auth prevents systematic extraction queries)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0005 Create Proxy AI Model (authenticated APIs prevent unauthorized queries for model replication)">
+            AML.T0005 Create Proxy AI Model (authenticated APIs prevent unauthorized queries for model replication)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0005.001 Create Proxy AI Model: Train Proxy via Replication (API auth rate-limits mass querying)">
+            AML.T0005.001 Create Proxy AI Model: Train Proxy via Replication (API auth rate-limits mass querying)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0090 OS Credential Dumping (service auth with short-lived tokens reduces dumped credential value)">
+            AML.T0090 OS Credential Dumping (service auth with short-lived tokens reduces dumped credential value)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0091 Use Alternate Authentication Material (API auth validates credential provenance)">
+            AML.T0091 Use Alternate Authentication Material (API auth validates credential provenance)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0091.000 Use Alternate Authentication Material: Application Access Token (API auth detects/blocks stolen application tokens)">
+            AML.T0091.000 Use Alternate Authentication Material: Application Access Token (API auth detects/blocks stolen application tokens)
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">NIST Adversarial Machine Learning 2025</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — NISTAML.031 Model Extraction (API auth prevents systematic model extraction queries)">
+            NISTAML.031 Model Extraction (API auth prevents systematic model extraction queries)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — NISTAML.033 Membership Inference (API auth limits inference queries)">
+            NISTAML.033 Membership Inference (API auth limits inference queries)
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">MAESTRO</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Model Stealing (L1) (API authentication prevents unauthorized model querying)">
+            Model Stealing (L1) (API authentication prevents unauthorized model querying)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Data Exfiltration (L2) (API auth prevents data exfiltration via inference API)">
+            Data Exfiltration (L2) (API auth prevents data exfiltration via inference API)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Agent Impersonation (L7) (service authentication prevents agent impersonation)">
+            Agent Impersonation (L7) (service authentication prevents agent impersonation)
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">Google Secure AI Framework 2.0 - Risks</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — MXF — Model Exfiltration (API authentication prevents model theft via inference API)">
+            MXF
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — MRE — Model Reverse Engineering (API authentication limits queries for reverse engineering)">
+            MRE
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">Cisco Integrated AI Security and Safety Framework</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AITech-10.1 Model Extraction">
+            AITech-10.1 Model Extraction
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AISubtech-10.1.1 API Query Stealing (API authentication directly prevents query stealing)">
+            AISubtech-10.1.1 API Query Stealing (API authentication directly prevents query stealing)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AITech-7.4 Token Manipulation (short-lived tokens and secure storage prevent token manipulation)">
+            AITech-7.4 Token Manipulation (short-lived tokens and secure storage prevent token manipulation)
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">Databricks AI Security Framework 3.0</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Model Serving - Inference requests 9.11: Model Inference API Access">
+            Model Serving - Inference requests 9.11: Model Inference API Access
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Model Serving - Inference requests 9.2: Model inversion (API auth limits queries needed for inversion)">
+            Model Serving - Inference requests 9.2: Model inversion (API auth limits queries needed for inversion)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Model Management 8.2: Model theft">
+            Model Management 8.2: Model theft
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Agents - Core 13.9: Identity Spoofing &amp; Impersonation">
+            Agents - Core 13.9: Identity Spoofing &amp; Impersonation
+          </span>
+          
+          
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] text-slate-400">
+      <span><span class="inline-block w-2 h-2 rounded-sm bg-green-100 border border-green-300 align-middle"></span>
+        Matched by hand</span>
+      <span><span class="inline-block w-2 h-2 rounded-sm bg-slate-100 border border-slate-300 align-middle"></span>
+        AIDEFEND upstream (not hand-checked)</span>
+    </div>
+    
+  </div>
+
+</div>
+        </td>
+      </tr>
+      
+      
+      
+      <tr class="hover:bg-gray-50">
+        <td class="px-3 py-2 text-center text-xs font-bold text-slate-400">7</td>
+        <td class="px-3 py-2">
+          <div class="text-xs font-medium text-slate-700">AIGOV-03-001</div>
+          <div class="text-xs text-slate-400">AI Model Vendor Security Assessment</div>
+        </td>
+        <td class="px-3 py-2 text-xs text-slate-600">Engineering DevDocs Assistant</td>
+        <td class="px-3 py-2 text-right text-xs font-mono font-bold
+          text-slate-600">
+          2.4
+        </td>
+        <td class="px-3 py-2 text-center">
+          
+          <span class="text-xs rounded-full px-2 py-0.5 bg-yellow-50 text-yellow-700">Medium</span>
+          
+        </td>
+        <td class="px-3 py-2 text-xs text-slate-500 max-w-xs truncate" title="Complete structured security assessments for all AI model providers covering data handling, encryption, sub-processors, and certifications (SOC 2 / ISO 27001). Execute DPAs with vendors that process personal data and schedule annual reassessments.">
+          Complete structured security assessments for all AI model providers covering data handling, encryption, sub-processors, and certifications (SOC 2 / ISO 27001). Execute DPAs with vendors that process personal data and schedule annual reassessments.
+        </td>
+        <td class="px-3 py-2 whitespace-nowrap">
+          
+          <button type="button" @click="open[7] = !open[7]"
+            class="inline-flex items-center gap-1 text-[11px] px-2 py-1 rounded-md border border-slate-200 text-slate-600 hover:bg-slate-50 transition">
+            <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+            <span class="font-mono" title="Number of external framework items this control maps to (excludes the AICM domain and the AIDEFEND technique themselves).">59</span><span class="text-[9px] text-green-600" title="Of those, how many were matched by hand against this control.">✓6</span>
+            <span x-text="open[7] ? '▲' : '▼'" class="text-[9px] text-slate-400"></span>
+          </button>
+          
+        </td>
+      </tr>
+      
+      <tr x-show="open[7]" x-cloak>
+        <td colspan="7" class="px-4 py-3 bg-slate-50/70 border-t border-slate-100">
+          
+<div class="space-y-4">
+
+  
+  <div>
+    <div class="text-[11px] font-semibold text-slate-500 mb-1.5">What this control is</div>
+
+    
+    <div class="flex flex-wrap items-center gap-x-2 gap-y-1.5 mb-1.5">
+      <span class="text-[11px] text-slate-500 font-medium shrink-0 sm:w-40">CSA AICM domain</span>
+      <span class="text-[11px] px-2 py-0.5 rounded-full bg-teal-50 text-teal-700 border border-teal-100">
+        STA · Supply Chain Management, Transparency, and Accountability
+      </span>
+      <span class="text-[10px] text-slate-400">domain level (18 domains) · v1.1.0</span>
+    </div>
+    
+
+    <div class="flex flex-wrap items-center gap-x-2 gap-y-1.5">
+      <span class="text-[11px] text-slate-500 font-medium shrink-0 sm:w-40">AIDEFEND technique</span>
+      
+      <span class="text-[11px] px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-100 font-mono">
+        AID-H-003 · Secure ML Supply Chain Management
+      </span>
+      
+    </div>
+
+    
+    
+  </div>
+
+  
+  <div>
+    <div class="text-[11px] font-semibold text-slate-500 mb-1">What this finding maps to</div>
+    <div class="text-[10px] text-slate-400 mb-1.5 leading-relaxed">Cross-framework mappings for this finding. Green = matched by hand against this control. Grey = inherited from the AIDEFEND upstream snapshot — nobody verified it at control level, so do not cite it as our mapping.</div>
+
+    
+    <div class="space-y-1.5">
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">OWASP LLM Top 10 2025</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — LLM03 — 2025 Supply Chain">
+            LLM03
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — LLM04 — 2025 Data and Model Poisoning">
+            LLM04
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">OWASP AISVS 1.0</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — C3.2.3 — Verify that provider model, version, or routing changes trigger security re-evaluation before continued use.">
+            C3.2.3
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — C6.1.2 — Verify that model weights, datasets, and fine-tuning adapters are downloaded only from approved sources.">
+            C6.1.2
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">NIST AI RMF 1.0</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — GOVERN 6.1 — Policies and procedures are in place that address AI risks associated with third-party entities, including risks of infr">
+            GOVERN 6.1
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — MAP 4.1 — Approaches for mapping AI technology and legal risks of its components – including the use of third-party data or softwa">
+            MAP 4.1
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — MAP 4.2 — Internal risk controls for components of the AI system including third-party AI technologies are identified and document">
+            MAP 4.2
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — MANAGE 3.1 — AI risks and benefits from third-party resources are regularly monitored, and risk controls are applied and documented.">
+            MANAGE 3.1
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">OWASP Top 10 for Agentic Applications 2026</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — ASI04 — 2026 Agentic Supply Chain Vulnerabilities">
+            ASI04
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">OWASP ML Top 10 2023</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — ML02 — 2023 Data Poisoning Attack">
+            ML02
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — ML06 — 2023 AI Supply Chain Attacks">
+            ML06
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — ML07 — 2023 Transfer Learning Attack">
+            ML07
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — ML10 — 2023 Model Poisoning">
+            ML10
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">MITRE ATLAS</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0010 AI Supply Chain Compromise">
+            AML.T0010 AI Supply Chain Compromise
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0010.000 AI Supply Chain Compromise: Hardware">
+            AML.T0010.000 AI Supply Chain Compromise: Hardware
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0010.001 AI Supply Chain Compromise: AI Software">
+            AML.T0010.001 AI Supply Chain Compromise: AI Software
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0010.002 AI Supply Chain Compromise: Data">
+            AML.T0010.002 AI Supply Chain Compromise: Data
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0010.003 AI Supply Chain Compromise: Model">
+            AML.T0010.003 AI Supply Chain Compromise: Model
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0010.004 AI Supply Chain Compromise: Container Registry">
+            AML.T0010.004 AI Supply Chain Compromise: Container Registry
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0011 User Execution">
+            AML.T0011 User Execution
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0011.000 User Execution: Unsafe AI Artifacts">
+            AML.T0011.000 User Execution: Unsafe AI Artifacts
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0011.001 User Execution: Malicious Package">
+            AML.T0011.001 User Execution: Malicious Package
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0019 Publish Poisoned Datasets">
+            AML.T0019 Publish Poisoned Datasets
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0058 Publish Poisoned Models">
+            AML.T0058 Publish Poisoned Models
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0059 Erode Dataset Integrity">
+            AML.T0059 Erode Dataset Integrity
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0076 Corrupt AI Model">
+            AML.T0076 Corrupt AI Model
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0104 Publish Poisoned AI Agent Tool">
+            AML.T0104 Publish Poisoned AI Agent Tool
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0011.002 User Execution: Poisoned AI Agent Tool">
+            AML.T0011.002 User Execution: Poisoned AI Agent Tool
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0010.005 AI Supply Chain Compromise: AI Agent Tool">
+            AML.T0010.005 AI Supply Chain Compromise: AI Agent Tool
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0109 AI Supply Chain Rug Pull">
+            AML.T0109 AI Supply Chain Rug Pull
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0112.001 Machine Compromise: AI Artifacts">
+            AML.T0112.001 Machine Compromise: AI Artifacts
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">NIST Adversarial Machine Learning 2025</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — NISTAML.051 Model Poisoning (Supply Chain)">
+            NISTAML.051 Model Poisoning (Supply Chain)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — NISTAML.023 Backdoor Poisoning">
+            NISTAML.023 Backdoor Poisoning
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — NISTAML.013 Data Poisoning (supply chain data poisoning)">
+            NISTAML.013 Data Poisoning (supply chain data poisoning)
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">MAESTRO</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Supply Chain Attacks (Cross-Layer)">
+            Supply Chain Attacks (Cross-Layer)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Supply Chain Attacks (L3)">
+            Supply Chain Attacks (L3)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Compromised Framework Components (L3)">
+            Compromised Framework Components (L3)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Compromised Container Images (L4)">
+            Compromised Container Images (L4)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Backdoor Attacks (L1)">
+            Backdoor Attacks (L1)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Backdoor Attacks (L3)">
+            Backdoor Attacks (L3)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Data Poisoning (L2)">
+            Data Poisoning (L2)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Compromised RAG Pipelines (L2)">
+            Compromised RAG Pipelines (L2)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Compromised Agent Registry (L7)">
+            Compromised Agent Registry (L7)
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">Google Secure AI Framework 2.0 - Risks</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — MST — Model Source Tampering">
+            MST
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — MDT — Model Deployment Tampering">
+            MDT
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — DP — Data Poisoning (poisoned data via supply chain)">
+            DP
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — IIC — Insecure Integrated Component">
+            IIC
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">Cisco Integrated AI Security and Safety Framework</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AITech-9.3 Dependency / Plugin Compromise">
+            AITech-9.3 Dependency / Plugin Compromise
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AITech-9.1 Model or Agentic System Manipulation">
+            AITech-9.1 Model or Agentic System Manipulation
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AITech-6.1 Training Data Poisoning (poisoned data via supply chain)">
+            AITech-6.1 Training Data Poisoning (poisoned data via supply chain)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AISubtech-9.2.2 Backdoors and Trojans (supply chain management detects backdoored artifacts)">
+            AISubtech-9.2.2 Backdoors and Trojans (supply chain management detects backdoored artifacts)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AISubtech-9.3.1 Malicious Package / Tool Injection">
+            AISubtech-9.3.1 Malicious Package / Tool Injection
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AISubtech-9.3.3 Dependency Replacement / Rug Pull">
+            AISubtech-9.3.3 Dependency Replacement / Rug Pull
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">Databricks AI Security Framework 3.0</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Algorithms 5.4: Malicious libraries">
+            Algorithms 5.4: Malicious libraries
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Model 7.1: Backdoor machine learning / Trojaned model">
+            Model 7.1: Backdoor machine learning / Trojaned model
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Model 7.3: ML Supply chain vulnerabilities">
+            Model 7.3: ML Supply chain vulnerabilities
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Model 7.4: Source code control attack">
+            Model 7.4: Source code control attack
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Raw Data 1.11: Compromised 3rd-party datasets">
+            Raw Data 1.11: Compromised 3rd-party datasets
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Platform 12.5: Poor security in the software development lifecycle">
+            Platform 12.5: Poor security in the software development lifecycle
+          </span>
+          
+          
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] text-slate-400">
+      <span><span class="inline-block w-2 h-2 rounded-sm bg-green-100 border border-green-300 align-middle"></span>
+        Matched by hand</span>
+      <span><span class="inline-block w-2 h-2 rounded-sm bg-slate-100 border border-slate-300 align-middle"></span>
+        AIDEFEND upstream (not hand-checked)</span>
+    </div>
+    
+  </div>
+
+</div>
+        </td>
+      </tr>
+      
+      
+      
+      <tr class="hover:bg-gray-50">
+        <td class="px-3 py-2 text-center text-xs font-bold text-slate-400">8</td>
+        <td class="px-3 py-2">
+          <div class="text-xs font-medium text-slate-700">AIGOV-08-002</div>
+          <div class="text-xs text-slate-400">AI Secrets and Credential Management</div>
+        </td>
+        <td class="px-3 py-2 text-xs text-slate-600">Engineering DevDocs Assistant</td>
+        <td class="px-3 py-2 text-right text-xs font-mono font-bold
+          text-slate-600">
+          2.0
+        </td>
+        <td class="px-3 py-2 text-center">
+          
+          <span class="text-xs rounded-full px-2 py-0.5 bg-yellow-50 text-yellow-700">Medium</span>
+          
+        </td>
+        <td class="px-3 py-2 text-xs text-slate-500 max-w-xs truncate" title="Migrate all AI API keys and database connection strings to a dedicated secrets manager and run a static scan to confirm no secrets remain hardcoded or in config files. Implement automated rotation on a defined schedule and audit access to secrets.">
+          Migrate all AI API keys and database connection strings to a dedicated secrets manager and run a static scan to confirm no secrets remain hardcoded or in config files. Implement automated rotation on a defined schedule and audit access to secrets.
+        </td>
+        <td class="px-3 py-2 whitespace-nowrap">
+          
+          <button type="button" @click="open[8] = !open[8]"
+            class="inline-flex items-center gap-1 text-[11px] px-2 py-1 rounded-md border border-slate-200 text-slate-600 hover:bg-slate-50 transition">
+            <span class="w-1.5 h-1.5 rounded-full bg-indigo-400"></span>
+            <span class="font-mono" title="Number of external framework items this control maps to (excludes the AICM domain and the AIDEFEND technique themselves).">25</span><span class="text-[9px] text-green-600" title="Of those, how many were matched by hand against this control.">✓6</span>
+            <span x-text="open[8] ? '▲' : '▼'" class="text-[9px] text-slate-400"></span>
+          </button>
+          
+        </td>
+      </tr>
+      
+      <tr x-show="open[8]" x-cloak>
+        <td colspan="7" class="px-4 py-3 bg-slate-50/70 border-t border-slate-100">
+          
+<div class="space-y-4">
+
+  
+  <div>
+    <div class="text-[11px] font-semibold text-slate-500 mb-1.5">What this control is</div>
+
+    
+    <div class="flex flex-wrap items-center gap-x-2 gap-y-1.5 mb-1.5">
+      <span class="text-[11px] text-slate-500 font-medium shrink-0 sm:w-40">CSA AICM domain</span>
+      <span class="text-[11px] px-2 py-0.5 rounded-full bg-teal-50 text-teal-700 border border-teal-100">
+        I&amp;S · Infrastructure Security
+      </span>
+      <span class="text-[10px] text-slate-400">domain level (18 domains) · v1.1.0</span>
+    </div>
+    
+
+    <div class="flex flex-wrap items-center gap-x-2 gap-y-1.5">
+      <span class="text-[11px] text-slate-500 font-medium shrink-0 sm:w-40">AIDEFEND technique</span>
+      
+      <span class="text-[11px] px-2 py-0.5 rounded-full bg-indigo-50 text-indigo-700 border border-indigo-100 font-mono">
+        AID-E-001.001 · Foundational Credential Management
+      </span>
+      
+    </div>
+
+    
+    
+  </div>
+
+  
+  <div>
+    <div class="text-[11px] font-semibold text-slate-500 mb-1">What this finding maps to</div>
+    <div class="text-[10px] text-slate-400 mb-1.5 leading-relaxed">Cross-framework mappings for this finding. Green = matched by hand against this control. Grey = inherited from the AIDEFEND upstream snapshot — nobody verified it at control level, so do not cite it as our mapping.</div>
+
+    
+    <div class="space-y-1.5">
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">OWASP LLM Top 10 2025</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — LLM02 — 2025 Sensitive Information Disclosure (if via compromised user credentials)">
+            LLM02
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">OWASP AISVS 1.0</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — C10.2.3 — Verify that MCP servers acting as OAuth 2.1 resource servers do not store or persist access tokens or user credentials.">
+            C10.2.3
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — C10.2.7 — Verify that MCP servers do not pass through access tokens received from clients to downstream APIs.">
+            C10.2.7
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — C4.3.4 — Verify that model weights and sensitive parameters stored locally are encrypted using hardware-backed key stores or secu">
+            C4.3.4
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — C4.3.5 — Verify that models packaged within mobile, IoT, or embedded applications are encrypted at rest, and decrypted only insid">
+            C4.3.5
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — C9.2.9 — Verify that cryptographic key material or credentials used to issue approvals are isolated from the agent runtime.">
+            C9.2.9
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-green-50 text-green-700 border border-green-200"
+                title="Matched by hand — C9.5.4 — Verify that secrets and credentials required by an agent at runtime are not exposed within the model&#39;s observable contex">
+            C9.5.4
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">OWASP Top 10 for Agentic Applications 2026</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — ASI03 — 2026 Identity and Privilege Abuse">
+            ASI03
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">OWASP ML Top 10 2023</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — ML05 — 2023 Model Theft (if via compromised user credentials)">
+            ML05
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">MITRE ATLAS</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0012 Valid Accounts">
+            AML.T0012 Valid Accounts
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0055 Unsecured Credentials">
+            AML.T0055 Unsecured Credentials
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0091 Use Alternate Authentication Material">
+            AML.T0091 Use Alternate Authentication Material
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0091.000 Use Alternate Authentication Material: Application Access Token">
+            AML.T0091.000 Use Alternate Authentication Material: Application Access Token
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AML.T0090 OS Credential Dumping">
+            AML.T0090 OS Credential Dumping
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">NIST Adversarial Machine Learning 2025</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — NISTAML.039 Compromising connected resources">
+            NISTAML.039 Compromising connected resources
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">MAESTRO</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Lateral Movement (Cross-Layer)">
+            Lateral Movement (Cross-Layer)
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Privilege Escalation (Cross-Layer)">
+            Privilege Escalation (Cross-Layer)
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">Google Secure AI Framework 2.0 - Risks</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — MXF — Model Exfiltration (credential management prevents ongoing exfiltration via stolen credentials)">
+            MXF
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — SDD — Sensitive Data Disclosure (rotation limits window for credential-based data disclosure)">
+            SDD
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">Cisco Integrated AI Security and Safety Framework</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AITech-14.1 Unauthorized Access">
+            AITech-14.1 Unauthorized Access
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — AISubtech-14.1.1 Credential Theft (foundational credential management addresses credential theft)">
+            AISubtech-14.1.1 Credential Theft (foundational credential management addresses credential theft)
+          </span>
+          
+          
+        </div>
+      </div>
+      
+      <div class="flex flex-col sm:flex-row sm:items-start gap-1 sm:gap-2">
+        <span class="text-[11px] text-slate-600 font-medium shrink-0 sm:w-56 sm:max-w-[14rem]">Databricks AI Security Framework 3.0</span>
+        <div class="flex flex-wrap gap-1">
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Raw Data 1.1: Insufficient access controls">
+            Raw Data 1.1: Insufficient access controls
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Platform 12.4: Unauthorized privileged access">
+            Platform 12.4: Unauthorized privileged access
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Agents - Tools MCP Server 13.19: Credential and Token Exposure">
+            Agents - Tools MCP Server 13.19: Credential and Token Exposure
+          </span>
+          
+          
+          
+          
+          <span class="text-[10px] px-1.5 py-0.5 rounded bg-slate-100 text-slate-600 border border-slate-200"
+                title="AIDEFEND upstream (not hand-checked) — Agents - Core 13.3: Privilege Compromise">
+            Agents - Core 13.3: Privilege Compromise
+          </span>
+          
+          
+        </div>
+      </div>
+      
+    </div>
+
+    <div class="mt-2 flex flex-wrap items-center gap-x-3 gap-y-1 text-[10px] text-slate-400">
+      <span><span class="inline-block w-2 h-2 rounded-sm bg-green-100 border border-green-300 align-middle"></span>
+        Matched by hand</span>
+      <span><span class="inline-block w-2 h-2 rounded-sm bg-slate-100 border border-slate-300 align-middle"></span>
+        AIDEFEND upstream (not hand-checked)</span>
+    </div>
+    
+  </div>
+
+</div>
+        </td>
+      </tr>
+      
+      
+    </tbody>
+  </table></div>
+</div>
+
+
+
+
+<div class="mb-6">
+  <h2 class="text-base font-semibold text-slate-700 mb-3">Improvement Plan</h2>
+  <div class="grid md:grid-cols-3 gap-4">
+    
+    
+    
+    <div class="border rounded-lg p-4 border-red-200 bg-red-50">
+      <h4 class="text-xs font-semibold text-red-700 mb-3">Weeks 1–2: Production Blockers</h4>
+      <ul class="space-y-1.5">
+        
+      </ul>
+    </div>
+    
+    
+    
+    <div class="border rounded-lg p-4 border-amber-200 bg-amber-50">
+      <h4 class="text-xs font-semibold text-amber-700 mb-3">Weeks 3–6: High Priority Fixes</h4>
+      <ul class="space-y-1.5">
+        
+        <li class="text-xs text-amber-700 flex gap-2">
+          <span class="shrink-0">•</span>
+          <span>AIGOV-01-001: AI Governance Policy and Framework [Engineering DevDocs Assistant]</span>
+        </li>
+        
+        <li class="text-xs text-amber-700 flex gap-2">
+          <span class="shrink-0">•</span>
+          <span>AIGOV-04-002: System Prompt Security and Confidentiality [Engineering DevDocs Assistant]</span>
+        </li>
+        
+        <li class="text-xs text-amber-700 flex gap-2">
+          <span class="shrink-0">•</span>
+          <span>AIGOV-02-001: AI Training and RAG Data Classification [Engineering DevDocs Assistant]</span>
+        </li>
+        
+      </ul>
+    </div>
+    
+    
+    
+    <div class="border rounded-lg p-4 border-blue-200 bg-blue-50">
+      <h4 class="text-xs font-semibold text-blue-700 mb-3">Weeks 7–12: Governance Foundation</h4>
+      <ul class="space-y-1.5">
+        
+        <li class="text-xs text-blue-700 flex gap-2">
+          <span class="shrink-0">•</span>
+          <span>AIGOV-01-002: AI System Inventory and Registration [Engineering DevDocs Assistant]</span>
+        </li>
+        
+        <li class="text-xs text-blue-700 flex gap-2">
+          <span class="shrink-0">•</span>
+          <span>AIGOV-01-003: AI Risk Classification and Criticality Scoring [Engineering DevDocs Assistant]</span>
+        </li>
+        
+        <li class="text-xs text-blue-700 flex gap-2">
+          <span class="shrink-0">•</span>
+          <span>AIGOV-07-001: AI Application API Authentication and Authorization [Engineering DevDocs Assistant]</span>
+        </li>
+        
+        <li class="text-xs text-blue-700 flex gap-2">
+          <span class="shrink-0">•</span>
+          <span>AIGOV-03-001: AI Model Vendor Security Assessment [Engineering DevDocs Assistant]</span>
+        </li>
+        
+        <li class="text-xs text-blue-700 flex gap-2">
+          <span class="shrink-0">•</span>
+          <span>AIGOV-08-002: AI Secrets and Credential Management [Engineering DevDocs Assistant]</span>
+        </li>
+        
+      </ul>
+    </div>
+    
+    
+  </div>
+</div>
+
+
+
+
+<script>
+function buildSystemIds() {
+  const checks = document.querySelectorAll('.system-check:checked');
+  const ids = Array.from(checks).map(c => c.value).join(',');
+  const form = document.getElementById('briefing-form');
+  let hidden = form.querySelector('input[name="system_ids"]');
+  if (!hidden) {
+    hidden = document.createElement('input');
+    hidden.type = 'hidden';
+    hidden.name = 'system_ids';
+    form.appendChild(hidden);
+  }
+  hidden.value = ids;
+  // Remove individual sys checkboxes from submission to avoid duplicate params
+  document.querySelectorAll('.system-check').forEach(c => c.disabled = true);
+}
+function selectAll() {
+  document.querySelectorAll('.system-check').forEach(c => c.checked = true);
+}
+function deselectAll() {
+  document.querySelectorAll('.system-check').forEach(c => c.checked = false);
+}
+</script>
+
+  </main>
+
+<script>
+// Demo pages: every element marked data-demo-inert is decorative — clickable, but must never navigate,
+// open a tab, or submit anything.
+document.addEventListener('click', function (e) {
+  var t = e.target;
+  if (!t || typeof t.closest !== 'function') return;
+  var el = t.closest('[data-demo-inert]');
+  if (!el) return;
+  e.preventDefault();
+  e.stopPropagation();
+}, true);
+</script>
+</body>
+</html>

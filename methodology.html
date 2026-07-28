@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Methodology — How AegisAI reaches a verdict</title>
+<meta name="description" content="Three measured inputs — exposure, control maturity, consequence — source-documented weights, and four fixed verdict rules: how AegisAI turns an AI governance assessment into a defensible Insufficient Evidence, Go, Conditional, or No-Go verdict.">
+<link rel="stylesheet" href="css/style.css?v=20260728">
+<link rel="canonical" href="https://kevinchiu923.github.io/AegisAI-net/methodology.html">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/favicon-32.png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="AegisAI">
+<meta property="og:title" content="Methodology — How AegisAI reaches a verdict">
+<meta property="og:description" content="Three measured inputs — exposure, control maturity, consequence — source-documented weights, and four fixed verdict rules: how AegisAI turns an AI governance assessment into a defensible Insufficient Evidence, Go, Conditional, or No-Go verdict.">
+<meta property="og:url" content="https://kevinchiu923.github.io/AegisAI-net/methodology.html">
+<meta property="og:image" content="https://kevinchiu923.github.io/AegisAI-net/assets/aegisai-lockup-1200x630-en.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="AegisAI — You make the call. We make it defensible.">
+<meta property="og:image:type" content="image/png">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="zh_TW">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Methodology — How AegisAI reaches a verdict">
+<meta name="twitter:description" content="Three measured inputs — exposure, control maturity, consequence — source-documented weights, and four fixed verdict rules: how AegisAI turns an AI governance assessment into a defensible Insufficient Evidence, Go, Conditional, or No-Go verdict.">
+<meta name="twitter:image" content="https://kevinchiu923.github.io/AegisAI-net/assets/aegisai-lockup-1200x630-en.png">
+<meta name="twitter:image:alt" content="AegisAI — You make the call. We make it defensible.">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap">
+    <a class="brand" href="index.html"><img class="brand-mark" src="assets/brand-mark.svg" alt="" width="34" height="34"><span class="brand-col"><span class="brand-name">Aegis<span>AI</span></span><small class="brand-tag" data-i18n="brand.tag">You make the call. We make it defensible.</small></span></a>
+    <button class="menu-btn" id="menu-btn" aria-label="Menu">☰</button>
+    <nav class="nav">
+      <a href="how-it-works.html" data-i18n="nav.how">How it works</a>
+      <a href="methodology.html" aria-current="page" data-i18n="nav.method">Methodology</a>
+      <a href="reports.html" data-i18n="nav.reports">Reports</a>
+      <a href="partnerships.html" data-i18n="nav.partner">Partnerships</a>
+      <a class="nav-cta" href="https://www.linkedin.com/in/yen-ming-kevin-chiu/" target="_blank" rel="noopener" data-i18n="nav.cta">Book a briefing</a>
+    </nav>
+    <button class="lang-toggle" id="lang-toggle" aria-label="Switch language">繁中</button>
+    <a class="btn btn-gold btn-sm header-cta" href="https://www.linkedin.com/in/yen-ming-kevin-chiu/" target="_blank" rel="noopener" data-i18n="nav.cta">Book a briefing</a>
+  </div>
+</header>
+
+<section class="page-hero on-dark">
+  <div class="wrap">
+    <p class="eyebrow" data-i18n="mp.eyebrow">Methodology</p>
+    <h1 data-i18n="mp.h1">How AegisAI reaches a verdict.</h1>
+    <p data-i18n="mp.sub">No black box: three measured inputs, weights with documented sources, and fixed decision rules.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow" data-i18n="mp.in.eyebrow">Step 1 · Inputs</p>
+      <h2 data-i18n="mp.in.h2">Three questions, three numbers</h2>
+      <p data-i18n="mp.in.sub">Risk is not one number. How easily does it go wrong, is the protection in place, and how bad is it when it does — AegisAI answers all three separately, and never lets one hide another.</p>
+    </div>
+    <div class="grid g3">
+      <div class="card reveal"><h3 data-i18n="mp.in.1.t">Exposure — 0.5 to 10</h3><p data-i18n="mp.in.1.d">How easily the system goes wrong: the data it touches, how independently it acts, whether outsiders can reach it, and which advanced capabilities it has. The scale is floored — prompt injection, insecure output handling, supply chain and overreliance apply to every LLM system, so <strong>no system can score zero risk</strong>.</p></div>
+      <div class="card reveal"><h3 data-i18n="mp.in.2.t">Control maturity — 0 to 5 → gap index 0 to 10</h3><p data-i18n="mp.in.2.d">Every applicable control is scored on a six-point maturity scale, with space to attach evidence. The gaps are normalised into a single index that is <strong>comparable across systems</strong>. Compliance, partial implementation and assessment progress are reported as three separate figures — a half-built control is never counted as a finished one.</p></div>
+      <div class="card reveal"><h3 data-i18n="mp.in.3.t">Consequence — five checkable answers</h3><p data-i18n="mp.in.3.d">How bad a failure would be: people affected, safety of life, regulated decision process, reversibility, financial exposure. Not "is this system important?" — a feeling — but five questions somebody can go and <strong>verify</strong>. Unanswered means <em>not declared</em>, which we report as unknown, never as low.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="section" style="background:var(--raised)">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow" data-i18n="mp.w.eyebrow">Step 2 · Weighting</p>
+      <h2 data-i18n="mp.w.h2">Gaps are weighted, and every weight has a source</h2>
+    </div>
+    <p class="fact-block reveal" data-i18n="mp.w.d">Not every gap deserves the same attention. AegisAI ranks findings so the controls most likely to matter for your systems rise to the top — using weights that each carry a documented source and rationale, and can be tuned with a full audit trail. A backtest module can validate them against your own logged incidents once you have them.</p>
+    <p class="std-note reveal" data-i18n="mp.w.note">The shipped defaults are expert judgment, not empirically calibrated — and the reports say so on their face. We would rather tell you that than dress a guess up as a measurement.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow" data-i18n="mp.v.eyebrow">Step 3 · Decision rules</p>
+      <h2 data-i18n="mp.v.h2">Four verdicts, fixed rules, no judgment calls</h2>
+      <p data-i18n="mp.v.sub">Two of the four block a launch. They are separate because they are different statements — and because the fix is different.</p>
+    </div>
+    <div class="grid g2">
+      <div class="card reveal"><h3 data-i18n="mp.v.4.t">Insufficient Evidence</h3><p data-i18n="mp.v.4.d">A mandatory control nobody has assessed yet, or a questionnaire below 30% complete. <strong>Launch is blocked</strong> — we cannot vouch for a control we never looked at. But this is missing evidence, not a deficiency we found. The fix is to finish the assessment, not to rebuild a control that may be perfectly fine.</p></div>
+      <div class="card reveal"><h3 data-i18n="mp.v.3.t">Go</h3><p data-i18n="mp.v.3.d">No blocking issues identified. The verdict still ships with its full evidence trail, so it can be challenged.</p></div>
+      <div class="card reveal"><h3 data-i18n="mp.v.2.t">Conditional</h3><p data-i18n="mp.v.2.d">Three or more <em>observed</em> high-severity findings. The system may proceed only under conditions.</p></div>
+      <div class="card reveal"><h3 data-i18n="mp.v.1.t">No-Go</h3><p data-i18n="mp.v.1.d">We assessed a mandatory control and it failed. One is enough to block a production launch. The fix is to remediate the control.</p></div>
+    </div>
+    <p class="std-note reveal" data-i18n="mp.v.note">Audit practice has always separated "we found a material deficiency" from "we could not obtain evidence". Both withhold approval; only one is an accusation. AegisAI says which one it means.</p>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow" data-i18n="mp.pm.eyebrow">Step 4 · Prioritisation</p>
+      <h2 data-i18n="mp.pm.h2">Which system gets the budget?</h2>
+      <p data-i18n="mp.pm.sub">A verdict tells you whether one system may launch. It does not tell a CISO where to spend. So the briefing plots two axes — how exposed a system is, and how bad its failure would be — and carries the gap index inside each cell.</p>
+    </div>
+    <div class="grid g2">
+      <div class="card reveal"><h3 data-i18n="mp.pm.1.t">Act now</h3><p data-i18n="mp.pm.1.d">High exposure <em>and</em> severe consequence. Fix these first.</p></div>
+      <div class="card reveal"><h3 data-i18n="mp.pm.2.t">Invest / harden</h3><p data-i18n="mp.pm.2.d">Unlikely to break — but expensive when it does. Protect the blast radius, not the probability. These are the systems a single risk score never surfaces.</p></div>
+      <div class="card reveal"><h3 data-i18n="mp.pm.3.t">Technical debt</h3><p data-i18n="mp.pm.3.d">Real gaps, bounded damage. Schedule it; don't panic.</p></div>
+      <div class="card reveal"><h3 data-i18n="mp.pm.4.t">Consequence not declared</h3><p data-i18n="mp.pm.4.d">Systems whose consequence questions are unanswered get their own bucket. They are never quietly filed under "low" — an undeclared system is an unknown system.</p></div>
+    </div>
+    <p class="fact-block reveal" data-i18n="mp.pm.fact">Consequence is classified by rule from the five declarations, not by a weighted formula — a formula would need weights, and any weight invented here would be one more uncalibrated number. Because the declarations come from the customer, consequence <strong>feeds no score, no finding, and no verdict</strong>: if a declared field could lower a risk number, the product would ship a one-click way to look safe.</p>
+  </div>
+</section>
+
+<section class="section" style="background:var(--raised)">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="eyebrow" data-i18n="mp.x.eyebrow">On top of the verdict</p>
+      <h2 data-i18n="mp.x.h2">Verification level and maturity estimate</h2>
+    </div>
+    <div class="grid g2">
+      <div class="card reveal"><h3 data-i18n="mp.x.1.t">OWASP AISVS level (L1–L3)</h3><p data-i18n="mp.x.1.d">Assessments are measured against the 191 requirements of OWASP AISVS 1.0, organised in three verification levels. Reports show the level achieved and the uncovered L1 requirements — AegisAI reports against the standard, it does not certify it.</p></div>
+      <div class="card reveal"><h3 data-i18n="mp.x.2.t">AIMA maturity estimate</h3><p data-i18n="mp.x.2.d">From the same control assessments, AegisAI derives a per-practice-area maturity estimate aligned with the OWASP AIMA v1.0 scale — an initial estimate, not a formal AIMA self-assessment.</p></div>
+    </div>
+    <p class="std-note reveal" data-i18n="mp.note">Weights and thresholds described here reflect the engine's current defaults; organisations can tune weights to their own risk appetite, with an audit trail.</p>
+  </div>
+</section>
+<section class="darker cta-block on-dark">
+  <div class="wrap reveal">
+    <p class="eyebrow" data-i18n="par.eyebrow">Partnerships</p>
+    <h2 class="one-line" data-i18n="cta.h2">Make AI governance your next practice line.</h2>
+    <p data-i18n="cta.p">Reach out directly — no forms, no waiting.</p>
+    <a class="btn btn-gold" href="https://www.linkedin.com/in/yen-ming-kevin-chiu/" target="_blank" rel="noopener" data-i18n="cta.btn">Connect on LinkedIn →</a>
+  </div>
+</section>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="cols">
+      <div>
+        <a class="brand" href="index.html"><img class="brand-mark" src="assets/brand-mark.svg" alt="" width="34" height="34"><span class="brand-col"><span class="brand-name">Aegis<span>AI</span></span><small class="brand-tag" data-i18n="brand.tag">You make the call. We make it defensible.</small></span></a>
+      </div>
+      <div>
+        <p class="foot-h" data-i18n="footer.explore">Explore</p>
+        <a href="index.html" data-i18n="footer.home">Home</a>
+        <a href="how-it-works.html" data-i18n="nav.how">How it works</a>
+        <a href="methodology.html" data-i18n="nav.method">Methodology</a>
+        <a href="reports.html" data-i18n="nav.reports">Reports</a>
+        <a href="partnerships.html" data-i18n="nav.partner">Partnerships</a>
+      </div>
+      <div>
+        <p class="foot-h" data-i18n="footer.standards">Standards</p>
+        <a href="https://www.nist.gov/itl/ai-risk-management-framework" target="_blank" rel="noopener">NIST AI RMF</a>
+        <a href="https://github.com/OWASP/AISVS" target="_blank" rel="noopener">OWASP AISVS</a>
+        <a href="https://genai.owasp.org/llm-top-10/" target="_blank" rel="noopener">OWASP LLM Top 10</a>
+        <a href="https://aidefend.net" target="_blank" rel="noopener">AIDEFEND</a>
+        <a href="https://genai.owasp.org/resource/owasp-top-10-for-agentic-applications-for-2026/" target="_blank" rel="noopener">OWASP Agentic Top 10</a>
+        <a href="https://owasp.org/www-project-ai-maturity-assessment/" target="_blank" rel="noopener">OWASP AIMA</a>
+        <a href="https://doi.org/10.6028/NIST.AI.600-1" target="_blank" rel="noopener">NIST AI 600-1</a>
+        <a href="https://eur-lex.europa.eu/eli/reg/2024/1689/oj" target="_blank" rel="noopener">EU AI Act</a>
+      </div>
+      <div>
+        <p class="foot-h" data-i18n="footer.contact">Contact</p>
+        <a href="https://www.linkedin.com/in/yen-ming-kevin-chiu/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+    <p class="legal">Copyright © 2026 AegisAI. All rights reserved.</p>
+  </div>
+</footer>
+
+<button id="to-top" aria-label="Back to top">↑</button>
+<script src="js/i18n.js?v=20260728"></script>
+<script src="js/main.js?v=20260728"></script>
+</body>
+</html>

@@ -1,0 +1,95 @@
+/* ============================================================
+   AegisAI — 樣本報告頁 RWD 補丁 (v1, 2026-07-13)
+   目的：手機（iPhone 12 Pro, 390px）上寬表格與風險矩陣不再被裁切，
+        改為「使用者可左右滑動檢視」。
+   注意：本站沒有 Tailwind 建置工具鏈（見 docs/2026-07-13-*.md），
+        因此本檔一律使用「純 CSS class」，不新增 Tailwind utility，
+        後台模板重新複刻樣本頁時只需重新套上 wrapper 與此 <link>。
+   ============================================================ */
+
+/* --- 1. 橫向捲動容器 ------------------------------------------------ */
+.rwd-scroll {
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;   /* iOS 慣性捲動 */
+  overscroll-behavior-x: contain;      /* 滑到底不要連帶捲動整頁 */
+  scrollbar-width: thin;
+  /* 邊緣陰影：內容超出時左右出現淡影，暗示「可以滑」 */
+  background:
+    linear-gradient(to right, #fff 30%, rgba(255, 255, 255, 0)) left center / 28px 100% no-repeat,
+    linear-gradient(to left, #fff 30%, rgba(255, 255, 255, 0)) right center / 28px 100% no-repeat,
+    radial-gradient(farthest-side at 0 50%, rgba(15, 23, 42, .12), rgba(15, 23, 42, 0)) left center / 12px 100% no-repeat,
+    radial-gradient(farthest-side at 100% 50%, rgba(15, 23, 42, .12), rgba(15, 23, 42, 0)) right center / 12px 100% no-repeat;
+  background-attachment: local, local, scroll, scroll;
+}
+
+/* 桌機把捲軸做細一點，不干擾閱讀 */
+.rwd-scroll::-webkit-scrollbar { height: 8px; }
+.rwd-scroll::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, .35);
+  border-radius: 999px;
+}
+.rwd-scroll::-webkit-scrollbar-track { background: transparent; }
+
+/* --- 2. 表格最小寬度：寧可捲動，也不要把欄位擠爛 --------------------- */
+.rwd-scroll > table { min-width: 880px; }          /* 預設（7 欄級） */
+.rwd-scroll > table#gap-report-table { min-width: 920px; }
+.rwd-scroll[data-rwd="decisions"] > table { min-width: 980px; }  /* 9 欄的通過/不通過表 */
+
+/* --- 3. 展開的「明細列」不要被拉到跟表格一樣寬 ----------------------- */
+/* 明細列是 colspan 的整列說明（標準對應等），若跟著 900px 走，
+   手機上讀一段文字要來回滑動。改成釘在視窗左緣、寬度限縮在畫面內。 */
+@media (max-width: 1023px) {
+  .rwd-scroll table td[colspan] > div {
+    position: sticky;
+    left: 0;
+    width: calc(100vw - 3.5rem);
+    max-width: 100%;
+  }
+}
+
+/* --- 4. 風險矩陣（2×2 grid）也可左右滑動 ---------------------------- */
+.rwd-scroll[data-rwd="matrix"] > .grid { min-width: 560px; }
+
+/* --- 5. 「可左右滑動」提示（只在窄螢幕出現） ------------------------- */
+.rwd-hint { display: none; }
+@media (max-width: 1023px) {
+  .rwd-hint {
+    display: block;
+    padding: 0 1rem .5rem;
+    font-size: 11px;
+    line-height: 1.4;
+    color: #94a3b8;
+  }
+}
+
+/* --- 6. 手機版間距與版面微調 ---------------------------------------- */
+@media (max-width: 640px) {
+  main.px-6 { padding-left: 1rem; padding-right: 1rem; }
+  /* 報告頁的 3 欄 KPI 卡在 390px 會擠成一團 → 改單欄 */
+  main .grid.grid-cols-3 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+  /* 頁首在窄螢幕縮排（右側 60px 留給關閉鈕） */
+  body > header { padding-left: 16px !important; padding-right: 56px !important; }
+}
+
+/* --- 6b. 安全網：整頁不再出現水平捲軸 -------------------------------- */
+/* overflow-x: clip 不會建立捲動容器，因此不會破壞頁首的 position: sticky
+   （若用 hidden 會破壞）。防的是浮出視窗的 tooltip 把整頁撐寬。 */
+html, body { overflow-x: clip; }
+
+/* OWASP 覆蓋卡片的 hover tooltip 在最右欄可能超出畫面 → 限制寬度 */
+@media (max-width: 640px) {
+  main .absolute.w-56 {
+    min-width: 0 !important;
+    max-width: calc(100vw - 2rem);
+  }
+}
+
+/* --- 7. 列印 / PDF：不要留捲動殘影，一律攤平 ------------------------- */
+@media print {
+  .rwd-scroll { overflow: visible !important; background: none !important; }
+  .rwd-scroll > table,
+  .rwd-scroll > .grid { min-width: 0 !important; }
+  .rwd-hint { display: none !important; }
+  .rwd-scroll table td[colspan] > div { position: static !important; width: auto !important; }
+}
